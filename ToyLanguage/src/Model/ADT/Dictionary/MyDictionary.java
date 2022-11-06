@@ -28,8 +28,6 @@ public class MyDictionary<T,V> implements MyIDictionary<T,V>{
 
     @Override
     public String toString() {
-        return "MyDictionary{" +
-                "internalDictionary=" + internalDictionary +
-                '}';
+        return "MyDictionary"+ internalDictionary;
     }
 }

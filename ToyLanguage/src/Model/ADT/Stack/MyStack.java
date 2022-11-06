@@ -22,8 +22,6 @@ public class MyStack<T> implements MyIStack<T>{
 
     @Override
     public String toString() {
-        return "MyStack{" +
-                "internalStack=" + internalStack.toString() +
-                '}';
+        return "MyStack"+ internalStack;
     }
 }
