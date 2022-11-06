@@ -25,6 +25,8 @@ public class PrgState {
 
     public MyIDictionary<String, Value> getSymTable() {return this.symTable; }
 
+    public MyIList<Value> getIList() {return this.out; }
+
     @Override
     public String toString() {
         return "PrgState{" +
