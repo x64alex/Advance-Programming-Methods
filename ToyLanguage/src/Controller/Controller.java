@@ -1,15 +1,16 @@
 package Controller;
 
 import Exceptions.MyException;
-import Model.MyIStack;
+import Model.ADT.Stack.MyIStack;
 import Model.PrgState;
 import Model.Statments.IStmt;
+import Repository.MyIRepository;
 import Repository.MyRepository;
 
 public class Controller implements IController{
-    private MyRepository repo;
+    private MyIRepository repo;
 
-    public Controller(MyRepository myRepository){
+    public Controller(MyIRepository myRepository){
         this.repo = myRepository;
     }
 
@@ -33,6 +34,7 @@ public class Controller implements IController{
                 System.out.print(e);
             }
             //here you can display the prg state
+            System.out.print(prg.toString());
         }
     }
 

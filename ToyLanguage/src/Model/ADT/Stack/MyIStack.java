@@ -1,4 +1,4 @@
-package Model;
+package Model.ADT.Stack;
 
 public interface MyIStack<T>{
     T pop();

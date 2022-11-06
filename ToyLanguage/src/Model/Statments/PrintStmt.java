@@ -5,8 +5,12 @@ import Model.PrgState;
 import Exceptions.MyException;
 
 
-class PrintStmt implements IStmt {
+public class PrintStmt implements IStmt {
     Exp exp;
+
+    public PrintStmt(Exp exp){
+        this.exp = exp;
+    }
     public String toString(){ return "print(" +exp.toString()+")";}
 
     public PrgState execute(PrgState state) throws MyException{
@@ -15,6 +19,6 @@ class PrintStmt implements IStmt {
 
     @Override
     public IStmt deepCopy() {
-        return new PrintStmt();
+        return new PrintStmt(this.exp);
     }
 }

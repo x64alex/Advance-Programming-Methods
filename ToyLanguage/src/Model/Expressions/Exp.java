@@ -1,7 +1,7 @@
 package Model.Expressions;
 
 import Exceptions.MyException;
-import Model.MyIDictionary;
+import Model.ADT.Dictionary.MyIDictionary;
 import Model.Values.Value;
 
 public interface Exp {

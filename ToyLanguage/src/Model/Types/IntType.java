@@ -1,6 +1,8 @@
 package Model.Types;
 
-class IntType implements Type{
+public class IntType implements Type{
+
+    public IntType(){}
     public boolean equals(Object another){
         if (another instanceof IntType) return true;
             else return false;
