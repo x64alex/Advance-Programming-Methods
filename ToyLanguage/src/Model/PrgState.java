@@ -1,18 +1,23 @@
 package Model;
 
+
 import Model.Statments.IStmt;
+import Model.Values.Value;
 
 public class PrgState {
-    MyIStack<IStmt> exeStack; MyIDictionary<String, Value> symTable;
+    MyIStack<IStmt> exeStack;
+    MyIDictionary<String, Value> symTable;
     MyIList<Value> out;
     IStmt originalProgram; //optional field, but good to have
-    PrgState(MyIStack<IStmt> stk, MyIDictionary<String,Value> symtbl,
-             ot, Istmt prg){
+    PrgState(MyIStack<IStmt> stk, MyIDictionary<String,Value> sTable, MyIList<Value> ot, IStmt prg){
         exeStack=stk;
-        MyIList<Value>
-                symTable=symtbl;
+        symTable=sTable;
         out = ot;
-        originalProgram=deepCopy(prg);//recreate the entire original prg
+        originalProgram=prg.deepCopy();//recreate the entire original prg
         stk.push(prg);
     }
+    public MyIStack<IStmt> getStk(){
+        return exeStack;
+    }
+
 }
