@@ -39,4 +39,13 @@ public class ArithExp implements Exp{
             throw new MyException("first operand is not an integer");
         return v1;
     }
+
+    @Override
+    public String toString() {
+        return "ArithExp{" +
+                "e1=" + e1 +
+                ", e2=" + e2 +
+                ", op=" + op +
+                '}';
+    }
 }

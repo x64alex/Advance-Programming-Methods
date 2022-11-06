@@ -12,4 +12,11 @@ public class BoolValue implements Value{
     public Type getType() {
         return new BoolType();
     }
+
+    @Override
+    public String toString() {
+        return "BoolValue{" +
+                "val=" + val +
+                '}';
+    }
 }

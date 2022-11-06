@@ -25,4 +25,13 @@ public class PrgState {
 
     public MyIDictionary<String, Value> getSymTable() {return this.symTable; }
 
+    @Override
+    public String toString() {
+        return "PrgState{" +
+                "\nexeStack=" + exeStack +
+                ", \nsymTable=" + symTable +
+                ", \nout=" + out +
+                ", \noriginalProgram=" + originalProgram +
+                "\n}";
+    }
 }

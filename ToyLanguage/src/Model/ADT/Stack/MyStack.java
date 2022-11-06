@@ -19,4 +19,11 @@ public class MyStack<T> implements MyIStack<T>{
     public Boolean isEmpty() {
         return internalStack.isEmpty();
     }
+
+    @Override
+    public String toString() {
+        return "MyStack{" +
+                "internalStack=" + internalStack.toString() +
+                '}';
+    }
 }

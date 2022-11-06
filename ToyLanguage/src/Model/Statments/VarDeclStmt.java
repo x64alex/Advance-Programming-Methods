@@ -1,7 +1,9 @@
 package Model.Statments;
 import Exceptions.MyException;
+import Model.ADT.Dictionary.MyIDictionary;
 import Model.PrgState;
 import Model.Types.Type;
+import Model.Values.Value;
 
 public class VarDeclStmt implements IStmt{
     String name;
@@ -14,11 +16,24 @@ public class VarDeclStmt implements IStmt{
 
     @Override
     public PrgState execute(PrgState state) throws MyException {
-        return null;
+        MyIDictionary<String, Value> symTable = state.getSymTable();
+        if(! symTable.isDefined(this.name)){
+            symTable.initialize(this.name,this.typ.defaultValue());
+        }else throw new MyException("Variable already exists");
+
+        return state;
     }
 
     @Override
     public IStmt deepCopy() {
-        return null;
+        return new VarDeclStmt(this.name, this.typ);
+    }
+
+    @Override
+    public String toString() {
+        return "VarDeclStmt{" +
+                "name='" + name + '\'' +
+                ", typ=" + typ +
+                '}';
     }
 }

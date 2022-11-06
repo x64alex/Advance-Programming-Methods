@@ -34,12 +34,13 @@ public class Controller implements IController{
                 System.out.print(e);
             }
             //here you can display the prg state
-            System.out.print(prg.toString());
+            this.displayState();
         }
     }
 
     @Override
     public void displayState() {
-
+        System.out.print(repo.getCrtPrg());
+        System.out.print("\n\n");
     }
 }

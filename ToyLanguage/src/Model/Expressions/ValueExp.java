@@ -11,4 +11,11 @@ public class ValueExp implements Exp{
         this.e = e;
     }
     public Value eval(MyIDictionary<String,Value> tbl) throws MyException {return e;}
+
+    @Override
+    public String toString() {
+        return "ValueExp{" +
+                "e=" + e.toString() +
+                '}';
+    }
 }

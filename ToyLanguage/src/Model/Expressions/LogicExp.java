@@ -14,5 +14,14 @@ public class LogicExp implements Exp{
         this.e2 = e2;
         this.op = op;
     }
-    public Value eval(MyIDictionary<String,Value> tbl) throws MyException {return new BoolValue();}
+    public Value eval(MyIDictionary<String,Value> tbl) throws MyException {return new BoolValue(true);}
+
+    @Override
+    public String toString() {
+        return "LogicExp{" +
+                "e1=" + e1 +
+                ", e2=" + e2 +
+                ", op=" + op +
+                '}';
+    }
 }

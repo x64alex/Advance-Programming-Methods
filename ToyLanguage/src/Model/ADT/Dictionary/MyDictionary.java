@@ -10,6 +10,8 @@ public class MyDictionary<T,V> implements MyIDictionary<T,V>{
     }
 
     @Override
+    public void initialize(T id, V val){ internalDictionary.put(id,val);}
+    @Override
     public V lookup(T id) {
         return internalDictionary.get(id);
     }
@@ -22,5 +24,12 @@ public class MyDictionary<T,V> implements MyIDictionary<T,V>{
     @Override
     public void update(T id, V val) {
         internalDictionary.put(id,val);
+    }
+
+    @Override
+    public String toString() {
+        return "MyDictionary{" +
+                "internalDictionary=" + internalDictionary +
+                '}';
     }
 }
