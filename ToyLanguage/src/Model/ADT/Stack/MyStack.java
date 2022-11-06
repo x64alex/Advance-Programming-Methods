@@ -1,21 +1,22 @@
 package Model.ADT.Stack;
 
-public class MyStack<T> implements MyIStack{
+import java.util.Stack;
 
+public class MyStack<T> implements MyIStack<T>{
 
-    public MyStack() {}
+    private final Stack<T> internalStack;
+
+    public MyStack() {this.internalStack = new Stack<>();}
     @Override
-    public Object pop() {
-        return null;
+    public T pop() {
+        return internalStack.pop();
     }
-
     @Override
-    public void push(Object v) {
-
+    public void push(T v) {
+        internalStack.push(v);
     }
-
     @Override
     public Boolean isEmpty() {
-        return false;
+        return internalStack.isEmpty();
     }
 }
