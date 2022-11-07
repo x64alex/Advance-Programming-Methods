@@ -11,9 +11,7 @@ public class BoolValue implements Value{
 
     public boolean getVal() {return val;}
     @Override
-    public Type getType() {
-        return new BoolType();
-    }
+    public Type getType() { return new BoolType();}
 
     @Override
     public String toString() {
