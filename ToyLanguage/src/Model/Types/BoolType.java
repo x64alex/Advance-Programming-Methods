@@ -8,7 +8,7 @@ public class BoolType implements Type{
         if (another instanceof BoolType) return true;
         else return false;
     }
-    public String toString() { return "bool";}
+    public String toString() { return "Bool Type";}
 
     @Override
     public Value defaultValue() {
