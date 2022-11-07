@@ -42,7 +42,7 @@ class Interpreter {
         MyIRepository repo2 = new MyRepository(prg2);
         Controller ctr2 = new Controller(repo2);
 
-        //int v; v=2;Print(v)
+        //bool a; int v; a=true;(If a Then v=2 Else v=3);Print(v)
         MyIStack<IStmt> stk3 = new MyStack<>();
         MyIDictionary<String,Value> sTable3 = new MyDictionary<>();
         MyIList<Value> ot3 = new MyList<>();

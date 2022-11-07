@@ -1,8 +1,14 @@
 package Model.Statments;
 
 import Exceptions.MyException;
+import Model.ADT.Dictionary.MyIDictionary;
+import Model.ADT.Stack.MyIStack;
 import Model.Expressions.Exp;
 import Model.PrgState;
+import Model.Types.BoolType;
+import Model.Types.Type;
+import Model.Values.BoolValue;
+import Model.Values.Value;
 
 public class IfStmt implements IStmt {
     Exp exp;
@@ -16,6 +22,22 @@ public class IfStmt implements IStmt {
     }
 
     public PrgState execute(PrgState state) throws MyException {
+        MyIDictionary<String, Value> symTbl = state.getSymTable();
+        MyIStack<IStmt> stk = state.getStk();
+
+        Value expression = this.exp.eval(symTbl);
+        Type bool = new BoolType();
+        if(bool.equals(expression.getType())){
+            BoolValue boolExpression = (BoolValue) expression;
+            boolean value = boolExpression.getVal();
+            if(value){
+                stk.push(this.thenS);
+            }
+            else {
+                stk.push(this.elseS);
+            }
+        }
+        else{ throw new MyException("Not bool type in if\n");}
         return state;
     }
 
