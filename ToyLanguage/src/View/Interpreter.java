@@ -55,11 +55,28 @@ class Interpreter {
         MyIRepository repo3 = new MyRepository(prg3);
         Controller ctr3 = new Controller(repo3);
 
+
+        //bool v; v=false; bool c; c = false; bool d; d= v and c; print(d)
+        MyIStack<IStmt> stk4 = new MyStack<>();
+        MyIDictionary<String,Value> sTable4 = new MyDictionary<>();
+        MyIList<Value> ot4 = new MyList<>();
+        IStmt ex4= new CompStmt(new VarDeclStmt("v",new BoolType()),
+                new CompStmt(new AssignStmt("v",new ValueExp(new BoolValue(false))), new CompStmt(new VarDeclStmt("c",new BoolType()),
+                        new CompStmt(new AssignStmt("c",new ValueExp(new BoolValue(true))),
+                        new CompStmt(new VarDeclStmt("d",new BoolType()),
+                                new CompStmt(new AssignStmt("d",new LogicExp("or",new VarExp("c"),new VarExp("d"))),
+                                        new PrintStmt(new VarExp("d"))
+                                ))))));
+        PrgState prg4 = new PrgState(stk4,sTable4,ot4,ex4);
+        MyIRepository repo4 = new MyRepository(prg4);
+        Controller ctr4 = new Controller(repo4);
+
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
         menu.addCommand(new RunExample("1", ex1.toString(), ctr1));
         menu.addCommand(new RunExample("2",ex2.toString(), ctr2));
         menu.addCommand(new RunExample("3",ex3.toString(),ctr3));
+        menu.addCommand(new RunExample("4",ex4.toString(),ctr4));
         menu.show();
     }
 }
