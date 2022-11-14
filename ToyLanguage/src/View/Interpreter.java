@@ -27,7 +27,7 @@ class Interpreter {
         IStmt ex1= new CompStmt(new VarDeclStmt("v",new IntType()),
                 new CompStmt(new AssignStmt("v",new ValueExp(new IntValue(2))), new PrintStmt(new VarExp("v"))));
         PrgState prg1 = new PrgState(stk1,sTable1,ot1,ex1);
-        MyIRepository repo1 = new MyRepository(prg1);
+        MyIRepository repo1 = new MyRepository(prg1, "log1.txt");
         Controller ctr1 = new Controller(repo1);
 
         //int a;int b; a=2+3*5;b=a+1;Print(b)
@@ -39,7 +39,7 @@ class Interpreter {
                         new CompStmt(new AssignStmt("a", new ArithExp('+',new ValueExp(new IntValue(2)),new ArithExp('*',new ValueExp(new IntValue(3)), new ValueExp(new IntValue(5))))),
                                 new CompStmt(new AssignStmt("b",new ArithExp('+',new VarExp("a"), new ValueExp(new IntValue(1)))), new PrintStmt(new VarExp("b"))))));
         PrgState prg2 = new PrgState(stk2, sTable2, ot2, ex2);
-        MyIRepository repo2 = new MyRepository(prg2);
+        MyIRepository repo2 = new MyRepository(prg2,"log2.txt");
         Controller ctr2 = new Controller(repo2);
 
         //bool a; int v; a=true;(If a Then v=2 Else v=3);Print(v)
@@ -52,7 +52,7 @@ class Interpreter {
                                 new CompStmt(new IfStmt(new VarExp("a"),new AssignStmt("v",new ValueExp(new IntValue(2))), new AssignStmt("v", new ValueExp(new IntValue(3)))), new PrintStmt(new
                                         VarExp("v"))))));
         PrgState prg3 = new PrgState(stk3,sTable3,ot3,ex3);
-        MyIRepository repo3 = new MyRepository(prg3);
+        MyIRepository repo3 = new MyRepository(prg3,"log3.txt");
         Controller ctr3 = new Controller(repo3);
 
 
@@ -68,7 +68,7 @@ class Interpreter {
                                         new PrintStmt(new VarExp("d"))
                                 ))))));
         PrgState prg4 = new PrgState(stk4,sTable4,ot4,ex4);
-        MyIRepository repo4 = new MyRepository(prg4);
+        MyIRepository repo4 = new MyRepository(prg4,"log4.txt");
         Controller ctr4 = new Controller(repo4);
 
         TextMenu menu = new TextMenu();

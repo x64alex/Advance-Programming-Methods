@@ -27,14 +27,16 @@ public class Controller implements IController{
     public void allStep() {
         PrgState prg = repo.getCrtPrg(); // repo is the controller field of type MyRepoInterface
         //here you can display the prg state
-        while (!prg.getStk().isEmpty()) {
-            try {
+        try {
+            repo.logPrgStateExec();
+            while (!prg.getStk().isEmpty()) {
                 this.oneStep(prg);
-            }catch(MyException e){
-                System.out.print(e);
+                repo.logPrgStateExec();
+                //here you can display the prg state
+                this.displayState();
             }
-            //here you can display the prg state
-            this.displayState();
+        }catch(MyException e){
+            System.out.print(e);
         }
     }
 

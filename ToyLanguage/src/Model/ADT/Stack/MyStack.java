@@ -1,5 +1,7 @@
 package Model.ADT.Stack;
 
+import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.Stack;
 
 public class MyStack<T> implements MyIStack<T>{
@@ -22,6 +24,11 @@ public class MyStack<T> implements MyIStack<T>{
 
     @Override
     public String toString() {
-        return "MyStack"+ internalStack;
+        String s = "ExeStack:\n";
+        Iterator value = internalStack.iterator();
+        while(value.hasNext()){
+            s = s + value+"\n";
+        }
+        return s;
     }
 }
