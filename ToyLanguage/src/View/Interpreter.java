@@ -85,7 +85,7 @@ class Interpreter {
         MyIList<Value> ot5 = new MyList<>();
         IStmt ex5= new CompStmt(new VarDeclStmt("varf",new StringType()),new CompStmt(new AssignStmt("varf",new ValueExp(new StringValue("test.in"))),
                         new CompStmt(new openRFile(new VarExp("varf")),
-                        new CompStmt(new CompStmt(new VarDeclStmt("varc",new StringType()),
+                        new CompStmt(new CompStmt(new VarDeclStmt("varc",new IntType()),
                                 new CompStmt(new readFile(new VarExp("varf"),"varc"),
                                         new PrintStmt(new VarExp("varc"))
                                 )),
