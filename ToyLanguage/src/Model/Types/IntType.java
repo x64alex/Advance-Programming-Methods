@@ -10,7 +10,7 @@ public class IntType implements Type{
         if (another instanceof IntType) return true;
             else return false;
     }
-    public String toString() { return "Int Type";}
+    public String toString() { return "Int";}
 
     @Override
     public Value defaultValue() {

@@ -10,10 +10,12 @@ public class IntValue implements Value{
     @Override
     public Type getType() { return new IntType();}
 
+    public boolean equals(IntValue bv){
+        return bv.val == this.val;
+    }
+
     @Override
     public String toString() {
-        return "IntValue{" +
-                "val=" + val +
-                '}';
+        return Integer.toString(val);
     }
 }

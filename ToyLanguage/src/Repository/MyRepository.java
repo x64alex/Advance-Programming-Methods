@@ -24,7 +24,12 @@ public class MyRepository implements MyIRepository {
     @Override
     public void logPrgStateExec() throws MyException {
         try {
-            PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
+            PrintWriter logFile = new PrintWriter(new FileWriter(logFilePath, true));
+            logFile.write("dewcrev");
+            logFile.append("pr");
+            logFile.write(currentState.toString());
+            logFile.append(currentState.toString());
+            logFile.print(currentState.toString());
         }catch (Exception e){
             throw new MyException(e.toString());
         }

@@ -31,9 +31,6 @@ public class VarDeclStmt implements IStmt{
 
     @Override
     public String toString() {
-        return "VarDeclStmt{" +
-                "name='" + name + '\'' +
-                ", typ=" + typ +
-                '}';
+        return name +"="+ typ;
     }
 }

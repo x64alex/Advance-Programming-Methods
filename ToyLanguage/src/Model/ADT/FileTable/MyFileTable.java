@@ -1,11 +1,10 @@
-package Model.ADT.Dictionary;
+package Model.ADT.FileTable;
 
 import java.util.HashMap;
 
-public class MyDictionary<T,V> implements MyIDictionary<T,V>{
-
+public class MyFileTable<T,V> implements MyIFileTable<T,V>{
     private final HashMap<T,V> internalDictionary;
-    public MyDictionary(){
+    public MyFileTable(){
         this.internalDictionary = new HashMap<>();
     }
 
@@ -29,8 +28,8 @@ public class MyDictionary<T,V> implements MyIDictionary<T,V>{
     @Override
     public String toString() {
         String s = "";
-        for(T el:internalDictionary.keySet()){
-            s +=el+"="+this.lookup(el)+"\n";
+        for(V el:internalDictionary.values()){
+            s +=el+"\n";
         }
         return s;
     }

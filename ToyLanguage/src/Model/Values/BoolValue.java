@@ -13,10 +13,11 @@ public class BoolValue implements Value{
     @Override
     public Type getType() { return new BoolType();}
 
+    public boolean equals(BoolValue bv){
+        return bv.val == this.val;
+    }
     @Override
     public String toString() {
-        return "BoolValue{" +
-                "val=" + val +
-                '}';
+        return Boolean.toString(val);
     }
 }
