@@ -8,4 +8,6 @@ public interface MyIFileTable<T,V> {
     boolean isDefined(T id);
 
     void update(T id, V val);
+
+    void delete(T id);
 }

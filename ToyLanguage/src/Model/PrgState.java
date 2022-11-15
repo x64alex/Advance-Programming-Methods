@@ -38,6 +38,8 @@ public class PrgState {
 
     public MyIList<Value> getIList() {return this.out; }
 
+    public MyIFileTable<StringValue, BufferedReader> getFileTable() {return  this.FileTable;}
+
     @Override
     public String toString() {
         return "ExeStack:\n" + exeStack +

@@ -26,9 +26,14 @@ public class MyFileTable<T,V> implements MyIFileTable<T,V>{
     }
 
     @Override
+    public void delete(T id) {
+        internalDictionary.remove(id);
+    }
+
+    @Override
     public String toString() {
         String s = "";
-        for(V el:internalDictionary.values()){
+        for(T el:internalDictionary.keySet()){
             s +=el+"\n";
         }
         return s;

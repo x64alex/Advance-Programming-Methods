@@ -8,4 +8,5 @@ public interface MyIDictionary<T,V> {
     boolean isDefined(T id);
 
     void update(T id, V val);
+
 }

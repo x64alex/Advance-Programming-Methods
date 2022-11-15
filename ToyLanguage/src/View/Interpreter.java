@@ -10,6 +10,8 @@ import Model.Expressions.VarExp;
 import Model.PrgState;
 import Model.Statments.*;
 import Controller.Controller;
+import Model.Statments.RWStatments.closeRFile;
+import Model.Statments.RWStatments.openRFile;
 import Model.Types.*;
 import Model.Values.*;
 import Model.Expressions.*;
@@ -81,7 +83,10 @@ class Interpreter {
         MyIStack<IStmt> stk5 = new MyStack<>();
         MyIDictionary<String,Value> sTable5 = new MyDictionary<>();
         MyIList<Value> ot5 = new MyList<>();
-        IStmt ex5= new CompStmt(new VarDeclStmt("varf",new StringType()),new AssignStmt("varf",new ValueExp(new StringValue("test.in"))));
+        IStmt ex5= new CompStmt(new VarDeclStmt("varf",new StringType()),new CompStmt(new AssignStmt("varf",new ValueExp(new StringValue("test.in"))),
+                        new CompStmt(new openRFile(new VarExp("varf")),
+                        new closeRFile(new VarExp("varf"))
+                )));
         PrgState prg5 = new PrgState(stk5,sTable5,ot5,ex5);
         MyIRepository repo5 = new MyRepository(prg5,"log5.txt");
         Controller ctr5 = new Controller(repo5);
