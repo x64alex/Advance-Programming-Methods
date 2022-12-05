@@ -20,7 +20,7 @@ public class PrgState {
     MyIDictionary<String, Value> symTable;
     MyIList<Value> out;
 
-    MyIHeap<Integer, Type> heap;
+    MyIHeap<Integer, Value> heap;
 
     MyIFileTable<StringValue, BufferedReader> FileTable;
     IStmt originalProgram; //optional field, but good to have
@@ -42,6 +42,8 @@ public class PrgState {
     public MyIList<Value> getIList() {return this.out; }
 
     public MyIFileTable<StringValue, BufferedReader> getFileTable() {return  this.FileTable;}
+
+    public MyIHeap<Integer, Value> getHeap() {return this.heap; }
 
     @Override
     public String toString() {

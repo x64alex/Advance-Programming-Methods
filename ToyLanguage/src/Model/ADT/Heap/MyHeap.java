@@ -9,6 +9,7 @@ public class MyHeap<Int,V> implements MyIHeap<Int,V> {
         this.internalDictionary = new HashMap<Integer, V>();
         this.freeLocation = 1;
     }
+    public int getFreeLocation(){return freeLocation;}
 
     @Override
     public void initialize(V val){
@@ -29,7 +30,7 @@ public class MyHeap<Int,V> implements MyIHeap<Int,V> {
     public String toString() {
         String s = "";
         for(Integer el:internalDictionary.keySet()){
-            s +=el+"\n";
+            s +=el+"->"+internalDictionary.get(el)+"\n";
         }
         return s;
     }

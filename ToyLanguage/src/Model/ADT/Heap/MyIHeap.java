@@ -5,5 +5,6 @@ public interface MyIHeap<T, V> {
 
     void initialize(V val);
 
+    int getFreeLocation();
     boolean isDefined(T id);
 }

@@ -7,4 +7,5 @@ public interface IStmt {
     String toString();
 
     IStmt deepCopy();
+
 }

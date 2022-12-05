@@ -9,7 +9,10 @@ public class RefValue implements Value{
     private int address;
     private Type locationType;
 
-    public RefValue(int add, Type locationType){this.address=add; this.locationType = locationType;}
+    public RefValue(int add, Type locationType){
+        this.address=add;
+        this.locationType = locationType;
+    }
 
     @Override
     public Type getType() {
@@ -18,9 +21,10 @@ public class RefValue implements Value{
     public boolean equals(RefValue r){
         return this.address == r.address && Objects.equals(locationType, r.locationType);
     }
+    int getAddr() {return address;}
 
     @Override
     public String toString() {
-        return "Address:"+address+" Type:"+locationType.toString();
+        return "("+address+","+locationType.toString()+")";
     }
 }
