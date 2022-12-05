@@ -4,21 +4,23 @@ package Model;
 import Model.ADT.Dictionary.MyIDictionary;
 import Model.ADT.FileTable.MyFileTable;
 import Model.ADT.FileTable.MyIFileTable;
+import Model.ADT.Heap.MyHeap;
+import Model.ADT.Heap.MyIHeap;
 import Model.ADT.List.MyIList;
 import Model.ADT.Stack.MyIStack;
 import Model.Statments.IStmt;
+import Model.Types.Type;
 import Model.Values.StringValue;
 import Model.Values.Value;
-
 import java.io.BufferedReader;
-import java.util.Dictionary;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class PrgState {
     MyIStack<IStmt> exeStack;
     MyIDictionary<String, Value> symTable;
     MyIList<Value> out;
+
+    MyIHeap<Integer, Type> heap;
 
     MyIFileTable<StringValue, BufferedReader> FileTable;
     IStmt originalProgram; //optional field, but good to have
@@ -28,6 +30,7 @@ public class PrgState {
         out = ot;
         originalProgram=prg.deepCopy();//recreate the entire original prg
         FileTable = new MyFileTable<>();
+        heap = new MyHeap<>();
         stk.push(prg);
     }
     public MyIStack<IStmt> getStk(){
@@ -46,6 +49,7 @@ public class PrgState {
                 "\nSymTable:\n" + symTable +
                 "\nOut:\n" + out +
                 "\nFileTable:\n" + FileTable+
+                "\nHeap:\n" + heap+
                 "\n\n";
     }
 }
