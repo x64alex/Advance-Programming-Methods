@@ -21,7 +21,7 @@ public class RefValue implements Value{
     public boolean equals(RefValue r){
         return this.address == r.address && Objects.equals(locationType, r.locationType);
     }
-    int getAddr() {return address;}
+    public int getAddr() {return address;}
 
     @Override
     public String toString() {

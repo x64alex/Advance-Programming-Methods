@@ -24,7 +24,7 @@ public class closeRFile implements IStmt {
     public PrgState execute(PrgState state) throws MyException {
         MyIDictionary<String, Value> symTbl = state.getSymTable();
         MyIFileTable<StringValue, BufferedReader> fileTable = state.getFileTable();
-        Value expression = exp.eval(symTbl);
+        Value expression = exp.eval(symTbl, state.getHeap());
         if(expression.getType().equals(new StringType())){
             StringValue newExpression = (StringValue) expression;
             if(fileTable.isDefined(newExpression)){

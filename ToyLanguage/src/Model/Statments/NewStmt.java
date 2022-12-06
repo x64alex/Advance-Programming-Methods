@@ -36,7 +36,7 @@ public class NewStmt implements IStmt{
             if(typId instanceof RefType){
                 RefType refTypeId = (RefType) typId;
                 Type innerType =  refTypeId.getInner();
-                Value val = exp.eval(symTbl);
+                Value val = exp.eval(symTbl, state.getHeap());
                 System.out.print(val.getType());
                 System.out.print(refTypeId.getInner());
                 if(Objects.equals(val.getType(), innerType)){

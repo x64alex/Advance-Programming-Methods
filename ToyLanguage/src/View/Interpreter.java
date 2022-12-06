@@ -108,14 +108,29 @@ class Interpreter {
         MyIRepository repo6 = new MyRepository(prg6, "log6.txt");
         Controller ctr6 = new Controller(repo6);
 
-        //Ref int v;new(v,20);
+        //Ref int v;new(v,20);Ref Ref int a; new(a,v);print(v);print(a);
         MyIStack<IStmt> stk7 = new MyStack<>();
         MyIDictionary<String,Value> sTable7 = new MyDictionary<>();
         MyIList<Value> ot7 = new MyList<>();
-        IStmt ex7= new CompStmt(new VarDeclStmt("v",new RefType( new IntType())), new NewStmt("v", new ValueExp(new IntValue(20))));
+        IStmt ex7= new CompStmt(new VarDeclStmt("v",new RefType( new IntType())), new CompStmt( new NewStmt("v", new ValueExp(new IntValue(20))), new CompStmt(
+                new VarDeclStmt("a",new RefType(new RefType(new IntType()))), new CompStmt(new NewStmt("a", new VarExp("v")),
+                new CompStmt(new PrintStmt(new VarExp("v")), new PrintStmt(new VarExp("a")))
+        ))));
         PrgState prg7 = new PrgState(stk7,sTable7,ot7,ex7);
         MyIRepository repo7 = new MyRepository(prg7, "log7.txt");
         Controller ctr7 = new Controller(repo7);
+
+        //Ref int v;new(v,20);Ref Ref int a; new(a,v);print(rH(v));print(rH(rH(a))+5)
+        MyIStack<IStmt> stk8 = new MyStack<>();
+        MyIDictionary<String,Value> sTable8 = new MyDictionary<>();
+        MyIList<Value> ot8 = new MyList<>();
+        IStmt ex8= new CompStmt(new VarDeclStmt("v",new RefType( new IntType())), new CompStmt( new NewStmt("v", new ValueExp(new IntValue(20))), new CompStmt(
+                new VarDeclStmt("a",new RefType(new RefType(new IntType()))), new CompStmt(new NewStmt("a", new VarExp("v")),
+                new CompStmt(new PrintStmt(new RhExp(new VarExp("v"))), new PrintStmt(new ArithExp('+',new RhExp(new RhExp(new VarExp("a"))) ,new ValueExp(new IntValue(5)))))
+        ))));
+        PrgState prg8 = new PrgState(stk8,sTable8,ot8,ex8);
+        MyIRepository repo8 = new MyRepository(prg8, "log8.txt");
+        Controller ctr8 = new Controller(repo8);
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
@@ -126,6 +141,7 @@ class Interpreter {
         menu.addCommand(new RunExample("5",ex5.toString(),ctr5));
         menu.addCommand(new RunExample("6",ex6.toString(),ctr6));
         menu.addCommand(new RunExample("7",ex7.toString(),ctr7));
+        menu.addCommand(new RunExample("8",ex8.toString(),ctr8));
         menu.show();
     }
 }

@@ -25,7 +25,7 @@ public class IfStmt implements IStmt {
         MyIDictionary<String, Value> symTbl = state.getSymTable();
         MyIStack<IStmt> stk = state.getStk();
 
-        Value expression = this.exp.eval(symTbl);
+        Value expression = this.exp.eval(symTbl, state.getHeap());
         Type bool = new BoolType();
         if(bool.equals(expression.getType())){
             BoolValue boolExpression = (BoolValue) expression;

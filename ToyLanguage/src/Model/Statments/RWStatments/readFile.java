@@ -30,7 +30,7 @@ public class readFile implements IStmt{
             throw new MyException("Variable not defiened");
         }
         MyIFileTable<StringValue, BufferedReader> fileTable = state.getFileTable();
-        Value expression = exp.eval(symTbl);
+        Value expression = exp.eval(symTbl, state.getHeap());
         if(expression.getType().equals(new StringType())){
             StringValue newExpression = (StringValue) expression;
             if(fileTable.isDefined(newExpression)){

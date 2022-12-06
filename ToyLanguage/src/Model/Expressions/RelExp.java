@@ -2,6 +2,7 @@ package Model.Expressions;
 
 import Exceptions.MyException;
 import Model.ADT.Dictionary.MyIDictionary;
+import Model.ADT.Heap.MyIHeap;
 import Model.Types.BoolType;
 import Model.Types.IntType;
 import Model.Values.BoolValue;
@@ -20,9 +21,9 @@ public class RelExp implements Exp{
         this.e2 = e2;
     }
     @Override
-    public Value eval(MyIDictionary<String, Value> tbl) throws MyException {
-        Value v1 = this.e1.eval(tbl);
-        Value v2 = this.e2.eval(tbl);
+    public Value eval(MyIDictionary<String, Value> tbl, MyIHeap<Integer,Value> hp) throws MyException {
+        Value v1 = this.e1.eval(tbl, hp);
+        Value v2 = this.e2.eval(tbl, hp);
         IntType intType = new IntType();
 
         if(intType.equals(v1.getType()) && intType.equals(v2.getType())) {

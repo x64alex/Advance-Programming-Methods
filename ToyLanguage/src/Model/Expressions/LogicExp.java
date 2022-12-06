@@ -2,6 +2,7 @@ package Model.Expressions;
 
 import Exceptions.MyException;
 import Model.ADT.Dictionary.MyIDictionary;
+import Model.ADT.Heap.MyIHeap;
 import Model.Types.BoolType;
 import Model.Values.*;
 
@@ -15,9 +16,9 @@ public class LogicExp implements Exp{
         this.e1 = e1;
         this.e2 = e2;
     }
-    public Value eval(MyIDictionary<String,Value> tbl) throws MyException {
-        Value v1 = this.e1.eval(tbl);
-        Value v2 = this.e2.eval(tbl);
+    public Value eval(MyIDictionary<String,Value> tbl, MyIHeap<Integer,Value> hp) throws MyException {
+        Value v1 = this.e1.eval(tbl, hp);
+        Value v2 = this.e2.eval(tbl, hp);
         BoolType boolType = new BoolType();
 
         if(boolType.equals(v1.getType()) && boolType.equals(v2.getType())) {
@@ -29,9 +30,7 @@ public class LogicExp implements Exp{
                 default -> throw new MyException("Wrong logical operand type");
             };
         }
-        else {
-            throw new MyException("Not boolean types in logical expression.");
-        }
+        else throw new MyException("Not boolean types in logical expression.");
     }
 
     @Override

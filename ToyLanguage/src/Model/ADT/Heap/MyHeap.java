@@ -30,7 +30,7 @@ public class MyHeap<Int,V> implements MyIHeap<Int,V> {
     public String toString() {
         String s = "";
         for(Integer el:internalDictionary.keySet()){
-            s +=el+"->"+internalDictionary.get(el)+"\n";
+            s += el+"->"+internalDictionary.get(el)+"\n";
         }
         return s;
     }
