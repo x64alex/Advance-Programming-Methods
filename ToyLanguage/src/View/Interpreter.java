@@ -144,14 +144,14 @@ class Interpreter {
         MyIRepository repo9 = new MyRepository(prg9, "log9.txt");
         Controller ctr9 = new Controller(repo9);
 
-        //Ref int v;new(v,20);Ref Ref int a; new(a,v); new(v,30);print(rH(rH(a)))
+        //Ref int v;new(v,20);Ref Ref int a; new(a,v); new(v,30); new(v,40);print(rH(rH(a))); print(rH(rH(a)));
         MyIStack<IStmt> stk10 = new MyStack<>();
         MyIDictionary<String,Value> sTable10 = new MyDictionary<>();
         MyIList<Value> ot10 = new MyList<>();
         IStmt ex10= new CompStmt(new VarDeclStmt("v",new RefType( new IntType())), new CompStmt( new NewStmt("v", new ValueExp(new IntValue(20))), new CompStmt(
                 new VarDeclStmt("a",new RefType(new RefType(new IntType()))), new CompStmt(new NewStmt("a", new VarExp("v")),
-                new CompStmt(new NewStmt("v", new ValueExp(new IntValue(30))), new PrintStmt(new ArithExp('+',new RhExp(new RhExp(new VarExp("a"))) ,new ValueExp(new IntValue(5)))))
-        ))));
+                new CompStmt(new CompStmt(new NewStmt("v", new ValueExp(new IntValue(30))), new NewStmt("v", new ValueExp(new IntValue(40)))), new CompStmt(new PrintStmt(new RhExp(new RhExp(new VarExp("a")))) ,new PrintStmt(new RhExp(new RhExp(new VarExp("a")))))
+                )))));
         PrgState prg10 = new PrgState(stk10,sTable10,ot10,ex10);
         MyIRepository repo10 = new MyRepository(prg10, "log10.txt");
         Controller ctr10 = new Controller(repo10);

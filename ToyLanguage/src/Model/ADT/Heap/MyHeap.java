@@ -1,5 +1,6 @@
 package Model.ADT.Heap;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,6 +36,11 @@ public class MyHeap<Int,V> implements MyIHeap<Int,V> {
     @Override
     public Map<Int, V> getContent() {
         return (Map<Int, V>) internalDictionary;
+    }
+
+    @Override
+    public Collection<V> getValues() {
+        return internalDictionary.values();
     }
 
     @Override

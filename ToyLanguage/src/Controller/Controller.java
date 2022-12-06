@@ -28,13 +28,20 @@ public class Controller implements IController{
         return crtStmt.execute(state);
     }
 
-    Map<Integer, Value> unsafeGarbageCollector(List<Integer> symTableAddr, Map<Integer,Value> heap){
+    Map<Integer, Value> safeGarbageCollector(List<Integer> symTableAddr,List<Integer> heapAddr, Map<Integer,Value> heap){
         return heap.entrySet().stream()
-                .filter(e->symTableAddr.contains(e.getKey()))
+                .filter(e->(symTableAddr.contains(e.getKey()) || heapAddr.contains(e.getKey())))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
     List<Integer> getAddrFromSymTable(Collection<Value> symTableValues){
         return symTableValues.stream()
+                .filter(v-> v instanceof RefValue)
+                .map(v-> {RefValue v1 = (RefValue)v; return v1.getAddr();})
+                .collect(Collectors.toList());
+    }
+
+    List<Integer> getAddrFromHeap(Collection<Value> heapValues){
+        return heapValues.stream()
                 .filter(v-> v instanceof RefValue)
                 .map(v-> {RefValue v1 = (RefValue)v; return v1.getAddr();})
                 .collect(Collectors.toList());
@@ -49,7 +56,7 @@ public class Controller implements IController{
             while (!prg.getStk().isEmpty()) {
                 this.oneStep(prg);
 
-                prg.getHeap().setContent(unsafeGarbageCollector(getAddrFromSymTable(prg.getSymTable().getValues()), prg.getHeap().getContent()));
+                prg.getHeap().setContent(safeGarbageCollector(getAddrFromSymTable(prg.getSymTable().getValues()),getAddrFromHeap(prg.getHeap().getValues()), prg.getHeap().getContent()));
                 repo.logPrgStateExec();
                 this.displayState();
             }
