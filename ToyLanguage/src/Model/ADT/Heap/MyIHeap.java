@@ -6,5 +6,7 @@ public interface MyIHeap<T, V> {
     void initialize(V val);
 
     int getFreeLocation();
+    void update(T id, V val);
+
     boolean isDefined(T id);
 }

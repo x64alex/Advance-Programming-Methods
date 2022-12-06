@@ -21,14 +21,15 @@ public class RhExp implements Exp{
     public Value eval(MyIDictionary<String, Value> tbl, MyIHeap<Integer,Value> hp) throws MyException {
         Value v = this.e.eval(tbl, hp);
 
+        //System.out.println(v.getType());
         if(v.getType() instanceof RefType){
             RefValue val = (RefValue) v;
             if(hp.isDefined(val.getAddr())){
                 return hp.lookup(val.getAddr());
             }
-            else throw new MyException("Address not a key in the heap");
+            else throw new MyException("Address not a key in the heap\n");
         }
-        else throw new MyException("Expression doesn't evaluates to a RefValue");
+        else throw new MyException("Expression doesn't evaluates to a RefValue\n");
     }
 
     @Override

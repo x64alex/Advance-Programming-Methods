@@ -12,6 +12,11 @@ public class MyHeap<Int,V> implements MyIHeap<Int,V> {
     public int getFreeLocation(){return freeLocation;}
 
     @Override
+    public void update(Int id, V val) {
+        internalDictionary.put((Integer) id, val);
+    }
+
+    @Override
     public void initialize(V val){
         internalDictionary.put(this.freeLocation,val);
         this.freeLocation +=1;
