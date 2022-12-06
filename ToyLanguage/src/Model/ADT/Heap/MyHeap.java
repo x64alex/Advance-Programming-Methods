@@ -1,9 +1,10 @@
 package Model.ADT.Heap;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class MyHeap<Int,V> implements MyIHeap<Int,V> {
-    private final HashMap<Integer, V> internalDictionary;
+    private HashMap<Integer, V> internalDictionary;
     private int freeLocation;
     public MyHeap(){
         this.internalDictionary = new HashMap<Integer, V>();
@@ -29,6 +30,16 @@ public class MyHeap<Int,V> implements MyIHeap<Int,V> {
     @Override
     public boolean isDefined(Int id) {
         return internalDictionary.containsKey(id);
+    }
+
+    @Override
+    public Map<Int, V> getContent() {
+        return (Map<Int, V>) internalDictionary;
+    }
+
+    @Override
+    public void setContent(Map<Int, V> unsafeGarbageCollector) {
+        this.internalDictionary = (HashMap<Integer, V>) unsafeGarbageCollector;
     }
 
     @Override

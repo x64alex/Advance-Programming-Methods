@@ -4,8 +4,13 @@ import Exceptions.MyException;
 import Model.ADT.Stack.MyIStack;
 import Model.PrgState;
 import Model.Statments.IStmt;
+import Model.Values.RefValue;
+import Model.Values.Value;
 import Repository.MyIRepository;
-import Repository.MyRepository;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Controller implements IController{
     private MyIRepository repo;
@@ -23,6 +28,18 @@ public class Controller implements IController{
         return crtStmt.execute(state);
     }
 
+    Map<Integer, Value> unsafeGarbageCollector(List<Integer> symTableAddr, Map<Integer,Value> heap){
+        return heap.entrySet().stream()
+                .filter(e->symTableAddr.contains(e.getKey()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+    List<Integer> getAddrFromSymTable(Collection<Value> symTableValues){
+        return symTableValues.stream()
+                .filter(v-> v instanceof RefValue)
+                .map(v-> {RefValue v1 = (RefValue)v; return v1.getAddr();})
+                .collect(Collectors.toList());
+    }
+
     @Override
     public void allStep() {
         PrgState prg = repo.getCrtPrg(); // repo is the controller field of type MyRepoInterface
@@ -31,8 +48,9 @@ public class Controller implements IController{
             repo.logPrgStateExec();
             while (!prg.getStk().isEmpty()) {
                 this.oneStep(prg);
+
+                prg.getHeap().setContent(unsafeGarbageCollector(getAddrFromSymTable(prg.getSymTable().getValues()), prg.getHeap().getContent()));
                 repo.logPrgStateExec();
-                //here you can display the prg state
                 this.displayState();
             }
         }catch(MyException e){

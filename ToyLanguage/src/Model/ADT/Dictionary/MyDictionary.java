@@ -1,6 +1,10 @@
 package Model.ADT.Dictionary;
 
+import Model.Values.Value;
+
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 public class MyDictionary<T,V> implements MyIDictionary<T,V>{
 
@@ -24,6 +28,11 @@ public class MyDictionary<T,V> implements MyIDictionary<T,V>{
     @Override
     public void update(T id, V val) {
         internalDictionary.put(id,val);
+    }
+
+    @Override
+    public Collection<V> getValues() {
+        return internalDictionary.values();
     }
 
     @Override

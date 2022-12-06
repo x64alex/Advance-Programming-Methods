@@ -25,7 +25,6 @@ public class MyRepository implements MyIRepository {
     public void logPrgStateExec() throws MyException {
         try {
             PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
-            System.out.print(currentState.toString());
             logFile.append(currentState.toString());
             logFile.close();
         }catch (Exception e){

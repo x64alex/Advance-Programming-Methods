@@ -1,5 +1,10 @@
 package Model.ADT.Dictionary;
 
+import Model.Values.Value;
+
+import java.util.Collection;
+import java.util.List;
+
 public interface MyIDictionary<T,V> {
     V lookup(T id);
 
@@ -9,4 +14,5 @@ public interface MyIDictionary<T,V> {
 
     void update(T id, V val);
 
+    Collection<V> getValues();
 }

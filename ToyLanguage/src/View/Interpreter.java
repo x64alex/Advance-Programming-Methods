@@ -144,6 +144,18 @@ class Interpreter {
         MyIRepository repo9 = new MyRepository(prg9, "log9.txt");
         Controller ctr9 = new Controller(repo9);
 
+        //Ref int v;new(v,20);Ref Ref int a; new(a,v); new(v,30);print(rH(rH(a)))
+        MyIStack<IStmt> stk10 = new MyStack<>();
+        MyIDictionary<String,Value> sTable10 = new MyDictionary<>();
+        MyIList<Value> ot10 = new MyList<>();
+        IStmt ex10= new CompStmt(new VarDeclStmt("v",new RefType( new IntType())), new CompStmt( new NewStmt("v", new ValueExp(new IntValue(20))), new CompStmt(
+                new VarDeclStmt("a",new RefType(new RefType(new IntType()))), new CompStmt(new NewStmt("a", new VarExp("v")),
+                new CompStmt(new NewStmt("v", new ValueExp(new IntValue(30))), new PrintStmt(new ArithExp('+',new RhExp(new RhExp(new VarExp("a"))) ,new ValueExp(new IntValue(5)))))
+        ))));
+        PrgState prg10 = new PrgState(stk10,sTable10,ot10,ex10);
+        MyIRepository repo10 = new MyRepository(prg10, "log10.txt");
+        Controller ctr10 = new Controller(repo10);
+
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
         menu.addCommand(new RunExample("1", ex1.toString(), ctr1));
@@ -155,6 +167,7 @@ class Interpreter {
         menu.addCommand(new RunExample("7",ex7.toString(),ctr7));
         menu.addCommand(new RunExample("8",ex8.toString(),ctr8));
         menu.addCommand(new RunExample("9",ex9.toString(),ctr9));
+        menu.addCommand(new RunExample("10",ex10.toString(),ctr10));
         menu.show();
     }
 }

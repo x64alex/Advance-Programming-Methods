@@ -1,5 +1,7 @@
 package Model.ADT.Heap;
 
+import java.util.Map;
+
 public interface MyIHeap<T, V> {
     V lookup(T id);
 
@@ -9,4 +11,8 @@ public interface MyIHeap<T, V> {
     void update(T id, V val);
 
     boolean isDefined(T id);
+
+    Map<T, V> getContent();
+
+    void setContent(Map<T, V> unsafeGarbageCollector);
 }
