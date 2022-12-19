@@ -48,7 +48,7 @@ public class NewStmt implements IStmt{
         }
         else throw new MyException("the used variable" + this.name + " was not declared before\n");
 
-        return state;
+        return null;
     }
 
     @Override

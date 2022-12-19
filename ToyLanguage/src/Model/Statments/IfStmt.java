@@ -38,7 +38,7 @@ public class IfStmt implements IStmt {
             }
         }
         else{ throw new MyException("Not bool type in if\n");}
-        return state;
+        return null;
     }
 
     public String toString() {

@@ -21,7 +21,7 @@ public class VarDeclStmt implements IStmt{
             symTable.initialize(this.name,this.typ.defaultValue());
         }else throw new MyException("Variable already exists");
 
-        return state;
+        return null;
     }
 
     @Override

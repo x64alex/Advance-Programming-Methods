@@ -40,7 +40,7 @@ public class WhileStmt implements IStmt{
             }
         }
         else{ throw new MyException("Not bool type in while\n");}
-        return state;
+        return null;
     }
 
     @Override

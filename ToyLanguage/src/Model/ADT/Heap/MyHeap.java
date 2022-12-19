@@ -23,6 +23,7 @@ public class MyHeap<Int,V> implements MyIHeap<Int,V> {
 
     @Override
     public void initialize(V val){
+        //TODO:Check if the position is 0 first
         internalDictionary.put(this.freeLocation,val);
         //TODO: Syncronize getNextFree within the whole app
         this.freeLocation +=1;

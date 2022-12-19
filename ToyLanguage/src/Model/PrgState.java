@@ -16,7 +16,7 @@ import java.io.BufferedReader;
 
 
 public class PrgState {
-    static int id;
+    static int id = 0;
     MyIStack<IStmt> exeStack;
     MyIDictionary<String, Value> symTable;
     MyIList<Value> out;

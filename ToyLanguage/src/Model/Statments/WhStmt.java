@@ -46,7 +46,7 @@ public class WhStmt implements IStmt{
             else throw new MyException("Variable is not of type RefType");
         }
         else throw new MyException("Variable not defined in symTable");
-        return state;
+        return null;
     }
 
     @Override

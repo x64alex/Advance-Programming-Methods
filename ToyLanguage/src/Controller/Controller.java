@@ -25,9 +25,7 @@ public class Controller implements IController{
     }
 
     private void conservativeGarbageCollector(List<PrgState> prgList){
-        for (int i = 0; i < prgList.size(); i++) {
-            PrgState prg = prgList.get(i);
-
+        for (PrgState prg:prgList) {
             prg.getHeap().setContent(safeGarbageCollector(getAddrFromSymTable(prg.getSymTable().getValues()),getAddrFromHeap(prg.getHeap().getValues()), prg.getHeap().getContent()));
         }
     }
@@ -58,11 +56,20 @@ public class Controller implements IController{
     }
 
     void oneStepForAllPrg(List<PrgState> prgList) {
+        prgList.forEach(prg -> {
+            try {
+                repo.logPrgStateExec(prg);
+            } catch (MyException e) {
+                throw new RuntimeException(e);
+            }
+        });
         List<Callable<PrgState>> callList = prgList.stream()
                 .map((PrgState p) -> (Callable<PrgState>) (() -> {
                     return p.oneStep();
                 }))
                 .collect(Collectors.toList());
+
+
         try {
             List<PrgState> newPrgList = executor.invokeAll(callList).stream()
                     .map(future -> { try {
@@ -72,6 +79,7 @@ public class Controller implements IController{
                     }})
                     .filter(Objects::nonNull)
                     .collect(Collectors.toList());
+
             prgList.addAll(newPrgList);
 
         }catch (Exception e){
@@ -87,6 +95,7 @@ public class Controller implements IController{
             }
         });
 
+
         repo.setPrgList(prgList);
     }
 
@@ -95,8 +104,8 @@ public class Controller implements IController{
             executor = Executors.newFixedThreadPool(1);
             List<PrgState> prgList=removeCompletedPrg(repo.getPrgList());
             while(prgList.size() > 0){
-                oneStepForAllPrg(prgList);
                 conservativeGarbageCollector(prgList);
+                oneStepForAllPrg(prgList);
 //remove the completed programs
                 prgList=removeCompletedPrg(repo.getPrgList());
 
