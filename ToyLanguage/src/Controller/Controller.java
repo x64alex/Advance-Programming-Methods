@@ -24,7 +24,13 @@ public class Controller implements IController{
         this.repo = myRepository;
     }
 
+    private void conservativeGarbageCollector(List<PrgState> prgList){
+        for (int i = 0; i < prgList.size(); i++) {
+            PrgState prg = prgList.get(i);
 
+            prg.getHeap().setContent(safeGarbageCollector(getAddrFromSymTable(prg.getSymTable().getValues()),getAddrFromHeap(prg.getHeap().getValues()), prg.getHeap().getContent()));
+        }
+    }
     Map<Integer, Value> safeGarbageCollector(List<Integer> symTableAddr,List<Integer> heapAddr, Map<Integer,Value> heap){
         return heap.entrySet().stream()
                 .filter(e->(symTableAddr.contains(e.getKey()) || heapAddr.contains(e.getKey())))
@@ -86,13 +92,14 @@ public class Controller implements IController{
 
     @Override
     public void allStep() {
-            executor = Executors.newFixedThreadPool(2);
-//remove the completed programs
+            executor = Executors.newFixedThreadPool(1);
             List<PrgState> prgList=removeCompletedPrg(repo.getPrgList());
             while(prgList.size() > 0){
                 oneStepForAllPrg(prgList);
+                conservativeGarbageCollector(prgList);
 //remove the completed programs
                 prgList=removeCompletedPrg(repo.getPrgList());
+
             }
             executor.shutdownNow();
 //HERE the repository still contains at least one Completed Prg

@@ -6,10 +6,9 @@ import java.util.Map;
 
 public class MyHeap<Int,V> implements MyIHeap<Int,V> {
     private HashMap<Integer, V> internalDictionary;
-    static private int freeLocation;
+    static private int freeLocation = 1;
     public MyHeap(){
         this.internalDictionary = new HashMap<Integer, V>();
-        this.freeLocation = 1;
     }
     public int getFreeLocation(){return freeLocation;}
 
@@ -25,7 +24,8 @@ public class MyHeap<Int,V> implements MyIHeap<Int,V> {
     @Override
     public void initialize(V val){
         internalDictionary.put(this.freeLocation,val);
-        this.freeLocation +=getNextFree();
+        //TODO: Syncronize getNextFree within the whole app
+        this.freeLocation +=1;
     }
     @Override
     public V lookup(Int id) {
