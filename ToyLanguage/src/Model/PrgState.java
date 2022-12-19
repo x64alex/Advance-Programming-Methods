@@ -17,6 +17,8 @@ import java.io.BufferedReader;
 
 public class PrgState {
     static int id = 0;
+
+    int currentId = 0;
     MyIStack<IStmt> exeStack;
     MyIDictionary<String, Value> symTable;
     MyIList<Value> out;
@@ -33,6 +35,8 @@ public class PrgState {
         FileTable = new MyFileTable<>();
         heap = new MyHeap<>();
         stk.push(prg);
+        this.currentId = id;
+        id +=1;
     }
 
     public PrgState oneStep() throws MyException {
@@ -52,10 +56,13 @@ public class PrgState {
 
     public MyIHeap<Integer, Value> getHeap() {return this.heap; }
 
+    public void setHeap(MyIHeap<Integer, Value> newHeap) {this.heap = newHeap; }
+
+
     public Boolean isNotCompleted() {return !this.exeStack.isEmpty();}
     @Override
     public String toString() {
-        return "Id:"+this.id+"\n"+
+        return "Id:"+this.currentId+"\n"+
                 "ExeStack:\n" + exeStack +
                 "\nSymTable:\n" + symTable +
                 "\nOut:\n" + out +

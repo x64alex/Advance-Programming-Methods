@@ -13,6 +13,8 @@ public class MyDictionary<T,V> implements MyIDictionary<T,V>{
         this.internalDictionary = new HashMap<>();
     }
 
+
+
     @Override
     public void initialize(T id, V val){ internalDictionary.put(id,val);}
     @Override
@@ -31,8 +33,22 @@ public class MyDictionary<T,V> implements MyIDictionary<T,V>{
     }
 
     @Override
+    public MyIDictionary<T, V> deepCopy() {
+        MyIDictionary<T,V> newDict =  new MyDictionary<>();
+        for(T key: this.getKeys()){
+            V value = this.lookup(key);
+            newDict.initialize(key, value);
+        }
+        return newDict;
+    }
+
+    @Override
     public Collection<V> getValues() {
         return internalDictionary.values();
+    }
+
+    public Collection<T> getKeys() {
+        return internalDictionary.keySet();
     }
 
     @Override

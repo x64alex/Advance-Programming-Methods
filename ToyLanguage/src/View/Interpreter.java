@@ -156,6 +156,36 @@ class Interpreter {
         MyIRepository repo10 = new MyRepository(prg10, "log10.txt");
         Controller ctr10 = new Controller(repo10);
 
+        //int v; Ref int a; v=10;new(a,22);
+        //fork(wH(a,30);v=32;    print(v);print(rH(a)));
+        //print(v);print(rH(a))
+        MyIStack<IStmt> stk11 = new MyStack<>();
+        MyIDictionary<String,Value> sTable11 = new MyDictionary<>();
+        MyIList<Value> ot11 = new MyList<>();
+        IStmt ex11= new CompStmt(new CompStmt(new CompStmt(
+                new VarDeclStmt("v",new IntType()), new VarDeclStmt("a",new RefType(new IntType()))),
+                new CompStmt(new CompStmt(new AssignStmt("v",new ValueExp(new IntValue(10))), new NewStmt("a", new ValueExp(new IntValue(22)))),
+                        new ForkStmt(new CompStmt(
+                                new WhStmt("a", new ValueExp(new IntValue(30))),
+                                new CompStmt(
+                                        new AssignStmt("v", new ValueExp(new IntValue(32))),
+                                        new CompStmt(
+                                                new PrintStmt(new VarExp("v")),
+                                                new PrintStmt(new RhExp(new VarExp("a")))
+                                        )
+                                )
+                        )
+
+                        ))),
+                new CompStmt(
+                        new PrintStmt(new VarExp("v")),
+                        new CompStmt(
+                                new PrintStmt(new VarExp("v")),
+                                new PrintStmt(new RhExp(new VarExp("a"))))));
+        PrgState prg11 = new PrgState(stk11,sTable11,ot11,ex11);
+        MyIRepository repo11 = new MyRepository(prg11, "log11.txt");
+        Controller ctr11 = new Controller(repo11);
+
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
         menu.addCommand(new RunExample("1", ex1.toString(), ctr1));
@@ -168,6 +198,7 @@ class Interpreter {
         menu.addCommand(new RunExample("8",ex8.toString(),ctr8));
         menu.addCommand(new RunExample("9",ex9.toString(),ctr9));
         menu.addCommand(new RunExample("10",ex10.toString(),ctr10));
+        menu.addCommand(new RunExample("11",ex11.toString(),ctr11));
         menu.show();
     }
 }

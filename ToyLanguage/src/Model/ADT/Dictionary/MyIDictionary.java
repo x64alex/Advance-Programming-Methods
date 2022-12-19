@@ -14,5 +14,7 @@ public interface MyIDictionary<T,V> {
 
     void update(T id, V val);
 
+    MyIDictionary<T,V> deepCopy();
+
     Collection<V> getValues();
 }
