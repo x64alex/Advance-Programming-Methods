@@ -3,8 +3,9 @@ package Controller;
 import Exceptions.MyException;
 import Model.PrgState;
 
+import java.util.List;
+
 public interface IController {
-    PrgState oneStep(PrgState state) throws MyException;
+    List<PrgState> removeCompletedPrg(List<PrgState> inPrgList);
     void allStep();
-    void displayState();
 }

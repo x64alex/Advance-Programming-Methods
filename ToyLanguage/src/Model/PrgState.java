@@ -1,6 +1,7 @@
 package Model;
 
 
+import Exceptions.MyException;
 import Model.ADT.Dictionary.MyIDictionary;
 import Model.ADT.FileTable.MyFileTable;
 import Model.ADT.FileTable.MyIFileTable;
@@ -15,6 +16,7 @@ import java.io.BufferedReader;
 
 
 public class PrgState {
+    static int id;
     MyIStack<IStmt> exeStack;
     MyIDictionary<String, Value> symTable;
     MyIList<Value> out;
@@ -32,6 +34,12 @@ public class PrgState {
         heap = new MyHeap<>();
         stk.push(prg);
     }
+
+    public PrgState oneStep() throws MyException {
+        if(exeStack.isEmpty()){ throw new MyException("Program State stack is empty");}
+        IStmt crtStmt = exeStack.pop();
+        return crtStmt.execute(this);
+    }
     public MyIStack<IStmt> getStk(){
         return this.exeStack;
     }
@@ -44,9 +52,11 @@ public class PrgState {
 
     public MyIHeap<Integer, Value> getHeap() {return this.heap; }
 
+    public Boolean isNotCompleted() {return !this.exeStack.isEmpty();}
     @Override
     public String toString() {
-        return "ExeStack:\n" + exeStack +
+        return "Id:"+this.id+"\n"+
+                "ExeStack:\n" + exeStack +
                 "\nSymTable:\n" + symTable +
                 "\nOut:\n" + out +
                 "\nFileTable:\n" + FileTable+

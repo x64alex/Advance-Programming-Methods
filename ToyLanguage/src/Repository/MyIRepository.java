@@ -3,7 +3,10 @@ package Repository;
 import Exceptions.MyException;
 import Model.PrgState;
 
+import java.util.List;
+
 public interface MyIRepository {
-    PrgState getCrtPrg();
-    void logPrgStateExec() throws MyException;
+    void setPrgList(List<PrgState> newList);
+    List<PrgState> getPrgList();
+    void logPrgStateExec(PrgState pr) throws MyException;
 }
