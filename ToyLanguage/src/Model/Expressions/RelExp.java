@@ -5,6 +5,7 @@ import Model.ADT.Dictionary.MyIDictionary;
 import Model.ADT.Heap.MyIHeap;
 import Model.Types.BoolType;
 import Model.Types.IntType;
+import Model.Types.Type;
 import Model.Values.BoolValue;
 import Model.Values.IntValue;
 import Model.Values.Value;
@@ -42,6 +43,20 @@ public class RelExp implements Exp{
         else {
             throw new MyException("Not int types in relational expression.");
         }
+    }
+
+    @Override
+    public Type typecheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typ1, typ2;
+        typ1=e1.typecheck(typeEnv);
+        typ2=e2.typecheck(typeEnv);
+        if(typ1.equals(new IntType())){
+            if(typ2.equals(new IntType())){
+                return new IntType();
+            }
+            else throw new MyException("second operand is not an integer");
+        }
+        else throw new MyException("first operand is not an integer");
     }
 
     @Override
