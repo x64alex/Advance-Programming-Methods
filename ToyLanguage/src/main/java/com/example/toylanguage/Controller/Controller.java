@@ -4,6 +4,8 @@ package com.example.toylanguage.Controller;
 import com.example.toylanguage.Exceptions.MyException;
 import com.example.toylanguage.Model.ADT.Dictionary.MyDictionary;
 import com.example.toylanguage.Model.ADT.Dictionary.MyIDictionary;
+import com.example.toylanguage.Model.ADT.Heap.MyHeap;
+import com.example.toylanguage.Model.ADT.Heap.MyIHeap;
 import com.example.toylanguage.Model.PrgState;
 import com.example.toylanguage.Model.Values.RefValue;
 import com.example.toylanguage.Model.Values.Value;
@@ -112,25 +114,50 @@ public class Controller implements IController{
     @Override
     public void allStep() throws MyException{
             runTypeChecker();
-            executor = Executors.newFixedThreadPool(1);
+            executor = Executors.newFixedThreadPool(2);
             List<PrgState> prgList=removeCompletedPrg(repo.getPrgList());
             while(prgList.size() > 0){
                 conservativeGarbageCollector(prgList);
                 oneStepForAllPrg(prgList);
-//remove the completed programs
+                //remove the completed programs
                 prgList=removeCompletedPrg(repo.getPrgList());
 
             }
             executor.shutdownNow();
-//HERE the repository still contains at least one Completed Prg
-// and its List<PrgState> is not empty. Note that oneStepForAllPrg calls the method
-//setPrgList of repository in order to change the repository
-// update the repository state
             repo.setPrgList(prgList);
         }
 
     @Override
+    public void oneStepAll() throws MyException {
+        executor = Executors.newFixedThreadPool(2);
+        List<PrgState> prgList=removeCompletedPrg(repo.getPrgList());
+        conservativeGarbageCollector(prgList);
+        oneStepForAllPrg(prgList);
+        //remove the completed programs
+        prgList=removeCompletedPrg(repo.getPrgList());
+
+        executor.shutdownNow();
+        repo.setPrgList(prgList);
+    }
+
+    @Override
     public int getNumberPrgStates() {
         return repo.getPrgList().size();
+    }
+
+    @Override
+    public boolean prgStatesDone() {
+        return repo.getPrgList().size() == 0 || (repo.getPrgList().size() == 1 && repo.getPrgList().get(0).getStk().isEmpty());
+    }
+
+    @Override
+    public MyIHeap<Integer, Value> getHeap() {
+        MyIHeap<Integer, Value> heap;
+        if(getNumberPrgStates() > 0){
+            PrgState prgstate =  repo.getPrgList().get(0);
+            heap = prgstate.getHeap();
+        }
+        else heap = new MyHeap();
+        return heap;
     }
 }

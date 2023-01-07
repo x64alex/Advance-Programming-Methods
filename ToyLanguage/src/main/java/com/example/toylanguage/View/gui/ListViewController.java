@@ -51,7 +51,7 @@ public class ListViewController {
 			 MyIDictionary<String, Value> sTable = new MyDictionary<>();
 			 MyIList<Value> ot = new MyList<>();
 			 PrgState prg = new PrgState(stk,sTable,ot,stmt);
-			 MyIRepository repo = new MyRepository(prg, "log"+Integer.toString(index)+".txt");
+			 MyIRepository repo = new MyRepository(prg, "log"+index+".txt");
 			 Controller ctr = new Controller(repo);
 			 try{
 				 ctr.runTypeChecker();
