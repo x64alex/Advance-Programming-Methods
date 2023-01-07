@@ -1,4 +1,6 @@
-package View;
+package View.cli;
+
+import View.cli.Command.Command;
 
 import java.util.HashMap;
 import java.util.Map;

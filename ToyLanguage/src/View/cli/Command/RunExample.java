@@ -1,7 +1,7 @@
-package View;
+package View.cli.Command;
 
 import Controller.Controller;
-import Exceptions.MyException;
+import View.cli.Command.Command;
 
 public class RunExample extends Command {
     private Controller ctr;
