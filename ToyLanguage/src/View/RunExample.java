@@ -16,6 +16,7 @@ public class RunExample extends Command {
         try {
             ctr.allStep();
         } catch (Exception e) {
-        } //here you must treat the exceptions that can not be solved in the controller
+            System.out.println(e);
+        }
     }
 }

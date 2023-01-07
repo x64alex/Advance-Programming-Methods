@@ -5,6 +5,7 @@ import Model.ADT.List.MyIList;
 import Model.Expressions.Exp;
 import Model.PrgState;
 import Exceptions.MyException;
+import Model.Types.Type;
 import Model.Values.Value;
 
 
@@ -27,5 +28,11 @@ public class PrintStmt implements IStmt {
     @Override
     public IStmt deepCopy() {
         return new PrintStmt(this.exp);
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typecheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        exp.typecheck(typeEnv);
+        return typeEnv;
     }
 }

@@ -1,9 +1,12 @@
 package Controller;
 
 import Exceptions.MyException;
+import Model.ADT.Dictionary.MyDictionary;
+import Model.ADT.Dictionary.MyIDictionary;
 import Model.ADT.Stack.MyIStack;
 import Model.PrgState;
 import Model.Statments.IStmt;
+import Model.Types.Type;
 import Model.Values.RefValue;
 import Model.Values.Value;
 import Repository.MyIRepository;
@@ -99,8 +102,15 @@ public class Controller implements IController{
         repo.setPrgList(prgList);
     }
 
+    public void runTypeChecker() throws MyException {
+        for (PrgState state: repo.getPrgList()) {
+            MyIDictionary<String, Type> typeTable = new MyDictionary<>();
+            state.getStk().peek().typecheck(typeTable);
+        }
+    }
     @Override
-    public void allStep() {
+    public void allStep() throws MyException{
+            runTypeChecker();
             executor = Executors.newFixedThreadPool(1);
             List<PrgState> prgList=removeCompletedPrg(repo.getPrgList());
             while(prgList.size() > 0){

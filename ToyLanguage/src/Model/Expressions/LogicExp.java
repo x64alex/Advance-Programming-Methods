@@ -4,6 +4,8 @@ import Exceptions.MyException;
 import Model.ADT.Dictionary.MyIDictionary;
 import Model.ADT.Heap.MyIHeap;
 import Model.Types.BoolType;
+import Model.Types.IntType;
+import Model.Types.Type;
 import Model.Values.*;
 
 public class LogicExp implements Exp{
@@ -31,6 +33,20 @@ public class LogicExp implements Exp{
             };
         }
         else throw new MyException("Not boolean types in logical expression.");
+    }
+
+    @Override
+    public Type typecheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typ1, typ2;
+        typ1=e1.typecheck(typeEnv);
+        typ2=e2.typecheck(typeEnv);
+        if(typ1.equals(new BoolType())){
+            if(typ2.equals(new BoolType())){
+                return new BoolType();
+            }
+            else throw new MyException("second operand is not a bool");
+        }
+        else throw new MyException("first operand is not a bool");
     }
 
     @Override

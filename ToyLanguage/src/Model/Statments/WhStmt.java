@@ -55,6 +55,16 @@ public class WhStmt implements IStmt{
     }
 
     @Override
+    public MyIDictionary<String, Type> typecheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typevar = typeEnv.lookup(name);
+        Type typexp = e.typecheck(typeEnv);
+        if (typevar.equals(new RefType(typexp)))
+            return typeEnv;
+        else
+            throw new MyException("Wh stmt: right hand side and left hand side have different types ");
+    }
+
+    @Override
     public String toString() {
         return "WriteHeap{"+name +"="+ e+"}";
     }
