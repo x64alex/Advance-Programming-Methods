@@ -2,13 +2,16 @@ package com.example.toylanguage.Model;
 
 
 import com.example.toylanguage.Exceptions.MyException;
+import com.example.toylanguage.Model.ADT.Dictionary.MyDictionary;
 import com.example.toylanguage.Model.ADT.Dictionary.MyIDictionary;
 import com.example.toylanguage.Model.ADT.FileTable.MyFileTable;
 import com.example.toylanguage.Model.ADT.FileTable.MyIFileTable;
 import com.example.toylanguage.Model.ADT.Heap.MyHeap;
 import com.example.toylanguage.Model.ADT.Heap.MyIHeap;
 import com.example.toylanguage.Model.ADT.List.MyIList;
+import com.example.toylanguage.Model.ADT.List.MyList;
 import com.example.toylanguage.Model.ADT.Stack.MyIStack;
+import com.example.toylanguage.Model.ADT.Stack.MyStack;
 import com.example.toylanguage.Model.Statments.IStmt;
 import com.example.toylanguage.Model.Values.StringValue;
 import com.example.toylanguage.Model.Values.Value;
@@ -42,6 +45,14 @@ public class PrgState {
         stk.push(prg);
         this.currentId = id;
         id +=1;
+    }
+
+    public PrgState(){
+        exeStack=new MyStack<>();
+        symTable=new MyDictionary<>();
+        out = new MyList<>();
+        FileTable = new MyFileTable<>();
+        heap = new MyHeap<>();
     }
 
     public PrgState oneStep() throws MyException {

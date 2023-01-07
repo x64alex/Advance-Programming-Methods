@@ -10,4 +10,8 @@ public interface MyIRepository {
     void setPrgList(List<PrgState> newList);
     List<PrgState> getPrgList();
     void logPrgStateExec(PrgState pr) throws MyException;
+
+    boolean existPrgState(Integer identifier);
+
+    PrgState getPrgState(Integer identifier);
 }

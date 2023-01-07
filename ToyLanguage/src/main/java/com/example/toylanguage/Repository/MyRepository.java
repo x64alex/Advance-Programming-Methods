@@ -39,4 +39,24 @@ public class MyRepository implements MyIRepository {
             throw new MyException(e.toString());
         }
     }
+
+    @Override
+    public boolean existPrgState(Integer identifier) {
+        for(PrgState prg: states){
+            if(prg.currentId == identifier){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public PrgState getPrgState(Integer identifier){
+        for(PrgState prg: states){
+            if(prg.currentId == identifier){
+                return prg;
+            }
+        }
+        return new PrgState();
+    }
 }

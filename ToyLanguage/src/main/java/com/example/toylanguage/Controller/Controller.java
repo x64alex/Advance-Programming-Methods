@@ -195,4 +195,23 @@ public class Controller implements IController{
 
         return list;
     }
+
+    @Override
+    public Integer getFirstPrgState() {
+        Integer identifier;
+        if(getNumberPrgStates() > 0){
+            PrgState prgstate =  repo.getPrgList().get(0);
+            identifier = prgstate.currentId;
+        }
+        else identifier = -1;
+        return identifier;
+    }
+
+    @Override
+    public PrgState getPrgState(Integer identifier) {
+        if(repo.existPrgState(identifier)){
+            return repo.getPrgState(identifier);
+        }
+        return new PrgState();
+    }
 }

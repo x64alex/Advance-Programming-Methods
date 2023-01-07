@@ -3,11 +3,14 @@ package com.example.toylanguage.View.gui;
 import com.example.toylanguage.Controller.*;
 import com.example.toylanguage.Exceptions.MyException;
 import com.example.toylanguage.Model.ADT.Heap.MyIHeap;
+import com.example.toylanguage.Model.PrgState;
 import com.example.toylanguage.Model.Statments.IStmt;
 import com.example.toylanguage.Model.Values.Value;
 import com.example.toylanguage.View.Examples;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -30,6 +33,7 @@ class Pair<T1, T2> {
 public class ProgramViewController {
 
     private Controller ctr;
+    private Integer selectedPrgState;
 
     public void setController(Controller controller){
         ctr = controller;
@@ -48,13 +52,21 @@ public class ProgramViewController {
 
     @FXML
     public TableColumn<Pair<Integer, Value>, String> heapTableValue;
-
+    @FXML
+    private TableView<Pair<Integer, Value>> symTable;
+    @FXML
+    public TableColumn<Pair<Integer, Value>, Integer> symTableName;
+    @FXML
+    public TableColumn<Pair<Integer, Value>, String> symTableValue;
     @FXML
     private ListView<Value> output;
     @FXML
     private ListView<Value> fileTable;
     @FXML
     private ListView<Integer> programStates;
+
+    @FXML
+    private ListView<IStmt> exeStackTable;
     @FXML
     private Button runOneStep;
 
@@ -83,14 +95,24 @@ public class ProgramViewController {
                 alert.showAndWait();
             }
         });
+
+        programStates.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
+            @Override
+            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
+                selectedPrgState = newValue;
+                populateExeStackTable();
+            }
+        });
     }
 
     private void populate() {
+        selectedPrgState = ctr.getFirstPrgState();
         populateTextField();
         populateHeap();
         populateOutput();
         populateFileTable();
         populateProgramStates();
+        populateExeStackTable();
     }
 
 
@@ -115,8 +137,11 @@ public class ProgramViewController {
     private void populateFileTable() {
         fileTable.setItems(FXCollections.observableArrayList(ctr.getFileTable().getFileNames()));
     }
-
     private void populateProgramStates() {
         programStates.setItems(FXCollections.observableArrayList(ctr.getPrgStateIdentifiers()));
+    }
+    private void populateExeStackTable() {
+        PrgState prgState = ctr.getPrgState(selectedPrgState);
+        exeStackTable.setItems(FXCollections.observableArrayList(prgState.getStk().getElements()));
     }
 }

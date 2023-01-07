@@ -4,6 +4,7 @@ package com.example.toylanguage.Model.ADT.Stack;
 
 import com.example.toylanguage.Exceptions.MyException;
 
+import java.util.List;
 import java.util.Stack;
 
 public class MyStack<T> implements MyIStack<T>{
@@ -19,6 +20,12 @@ public class MyStack<T> implements MyIStack<T>{
     public void push(T v) {
         internalStack.push(v);
     }
+
+    @Override
+    public List<T> getElements() {
+        return internalStack.stream().toList();
+    }
+
     @Override
     public Boolean isEmpty() {
         return internalStack.isEmpty();
@@ -30,6 +37,8 @@ public class MyStack<T> implements MyIStack<T>{
             throw new MyException("STACK ERROR: Stack is empty");
         return internalStack.peek();
     }
+
+
     @Override
     public String toString() {
         String s = "";
