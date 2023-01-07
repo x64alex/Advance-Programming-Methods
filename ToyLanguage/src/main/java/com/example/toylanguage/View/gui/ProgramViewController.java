@@ -54,6 +54,8 @@ public class ProgramViewController {
     @FXML
     private ListView<Value> fileTable;
     @FXML
+    private ListView<Integer> programStates;
+    @FXML
     private Button runOneStep;
 
     @FXML
@@ -88,6 +90,7 @@ public class ProgramViewController {
         populateHeap();
         populateOutput();
         populateFileTable();
+        populateProgramStates();
     }
 
 
@@ -111,5 +114,9 @@ public class ProgramViewController {
 
     private void populateFileTable() {
         fileTable.setItems(FXCollections.observableArrayList(ctr.getFileTable().getFileNames()));
+    }
+
+    private void populateProgramStates() {
+        programStates.setItems(FXCollections.observableArrayList(ctr.getPrgStateIdentifiers()));
     }
 }

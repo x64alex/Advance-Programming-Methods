@@ -27,4 +27,6 @@ public interface IController {
     MyIHeap<Integer, Value> getHeap();
 
     MyIFileTable<StringValue, BufferedReader> getFileTable();
+
+    List<Integer> getPrgStateIdentifiers();
 }
