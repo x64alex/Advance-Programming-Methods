@@ -3,6 +3,7 @@ package com.example.toylanguage.Controller;
 
 import com.example.toylanguage.Exceptions.MyException;
 import com.example.toylanguage.Model.ADT.Heap.MyIHeap;
+import com.example.toylanguage.Model.ADT.List.MyIList;
 import com.example.toylanguage.Model.PrgState;
 import com.example.toylanguage.Model.Values.Value;
 
@@ -18,5 +19,6 @@ public interface IController {
 
     boolean prgStatesDone();
 
+    MyIList<Value> getOutput();
     MyIHeap<Integer, Value> getHeap();
 }

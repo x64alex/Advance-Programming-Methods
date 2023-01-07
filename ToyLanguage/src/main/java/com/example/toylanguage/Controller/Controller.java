@@ -6,6 +6,8 @@ import com.example.toylanguage.Model.ADT.Dictionary.MyDictionary;
 import com.example.toylanguage.Model.ADT.Dictionary.MyIDictionary;
 import com.example.toylanguage.Model.ADT.Heap.MyHeap;
 import com.example.toylanguage.Model.ADT.Heap.MyIHeap;
+import com.example.toylanguage.Model.ADT.List.MyIList;
+import com.example.toylanguage.Model.ADT.List.MyList;
 import com.example.toylanguage.Model.PrgState;
 import com.example.toylanguage.Model.Values.RefValue;
 import com.example.toylanguage.Model.Values.Value;
@@ -148,6 +150,17 @@ public class Controller implements IController{
     @Override
     public boolean prgStatesDone() {
         return repo.getPrgList().size() == 0 || (repo.getPrgList().size() == 1 && repo.getPrgList().get(0).getStk().isEmpty());
+    }
+
+    @Override
+    public MyIList<Value> getOutput() {
+        MyIList<Value> output;
+        if(getNumberPrgStates() > 0){
+            PrgState prgstate =  repo.getPrgList().get(0);
+            output = prgstate.getIList();
+        }
+        else output = new MyList<>();
+        return output;
     }
 
     @Override

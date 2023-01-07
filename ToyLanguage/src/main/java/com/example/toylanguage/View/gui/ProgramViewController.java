@@ -3,7 +3,9 @@ package com.example.toylanguage.View.gui;
 import com.example.toylanguage.Controller.*;
 import com.example.toylanguage.Exceptions.MyException;
 import com.example.toylanguage.Model.ADT.Heap.MyIHeap;
+import com.example.toylanguage.Model.Statments.IStmt;
 import com.example.toylanguage.Model.Values.Value;
+import com.example.toylanguage.View.Examples;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -48,6 +50,8 @@ public class ProgramViewController {
     public TableColumn<Pair<Integer, Value>, String> heapTableValue;
 
     @FXML
+    private ListView<Value> output;
+    @FXML
     private Button runOneStep;
 
     @FXML
@@ -80,6 +84,7 @@ public class ProgramViewController {
     private void populate() {
         populateTextField();
         populateHeap();
+        populateOutput();
     }
 
 
@@ -95,5 +100,9 @@ public class ProgramViewController {
     }
     private void populateTextField() {
         prgStates.setText(Integer.toString(ctr.getNumberPrgStates()));
+    }
+
+    private void populateOutput() {
+        output.setItems(FXCollections.observableArrayList(ctr.getOutput().getList()));
     }
 }

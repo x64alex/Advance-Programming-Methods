@@ -16,6 +16,11 @@ public class MyList<T> implements MyIList<T> {
     }
 
     @Override
+    public List<T> getList() {
+        return internalList;
+    }
+
+    @Override
     public String toString() {
         String s="";
         for(T el:internalList){

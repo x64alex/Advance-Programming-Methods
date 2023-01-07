@@ -7,12 +7,15 @@
    <children>
       <TextField fx:id="prgStates" layoutX="93.0" layoutY="28.0" prefHeight="26.0" prefWidth="27.0" />
       <Label layoutX="24.0" layoutY="32.0" text="PrgStates" />
-      <TableView fx:id="heapTable" layoutX="20.0" layoutY="81.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="heapTable" layoutX="20.0" layoutY="94.0" prefHeight="200.0" prefWidth="151.0">
         <columns>
           <TableColumn fx:id="heapTableAddress" prefWidth="75.0" text="Address" />
-          <TableColumn  fx:id="heapTableValue" prefWidth="75.0" text="Value" />
+          <TableColumn fx:id="heapTableValue" prefWidth="75.0" text="Value" />
         </columns>
       </TableView>
       <Button fx:id="runOneStep" layoutX="245.0" layoutY="347.0" mnemonicParsing="false" text="Run one step" />
+      <Label layoutX="63.0" layoutY="65.0" text="Heap Table" />
+      <Label layoutX="222.0" layoutY="65.0" text="Out" />
+      <ListView fx:id="output" layoutX="189.0" layoutY="94.0" prefHeight="200.0" prefWidth="151.0" />
    </children>
 </AnchorPane>
