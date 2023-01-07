@@ -1,6 +1,7 @@
 package com.example.toylanguage.Model.ADT.FileTable;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class MyFileTable<T,V> implements MyIFileTable<T,V>{
     private final HashMap<T,V> internalDictionary;
@@ -31,10 +32,15 @@ public class MyFileTable<T,V> implements MyIFileTable<T,V>{
     }
 
     @Override
+    public List<T> getFileNames() {
+        return internalDictionary.keySet().stream().toList();
+    }
+
+    @Override
     public String toString() {
         String s = "";
         for(T el:internalDictionary.keySet()){
-            s +=el+"\n";
+            s += el+"\n";
         }
         return s;
     }

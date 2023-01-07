@@ -2,11 +2,15 @@ package com.example.toylanguage.Controller;
 
 
 import com.example.toylanguage.Exceptions.MyException;
+import com.example.toylanguage.Model.ADT.FileTable.MyFileTable;
+import com.example.toylanguage.Model.ADT.FileTable.MyIFileTable;
 import com.example.toylanguage.Model.ADT.Heap.MyIHeap;
 import com.example.toylanguage.Model.ADT.List.MyIList;
 import com.example.toylanguage.Model.PrgState;
+import com.example.toylanguage.Model.Values.StringValue;
 import com.example.toylanguage.Model.Values.Value;
 
+import java.io.BufferedReader;
 import java.util.List;
 
 public interface IController {
@@ -21,4 +25,6 @@ public interface IController {
 
     MyIList<Value> getOutput();
     MyIHeap<Integer, Value> getHeap();
+
+    MyIFileTable<StringValue, BufferedReader> getFileTable();
 }

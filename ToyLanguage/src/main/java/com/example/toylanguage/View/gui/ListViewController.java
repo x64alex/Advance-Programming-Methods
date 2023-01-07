@@ -5,12 +5,14 @@ import com.example.toylanguage.Controller.Controller;
 import com.example.toylanguage.Exceptions.MyException;
 import com.example.toylanguage.Model.ADT.Dictionary.MyDictionary;
 import com.example.toylanguage.Model.ADT.Dictionary.MyIDictionary;
+import com.example.toylanguage.Model.ADT.FileTable.MyFileTable;
 import com.example.toylanguage.Model.ADT.List.MyIList;
 import com.example.toylanguage.Model.ADT.List.MyList;
 import com.example.toylanguage.Model.ADT.Stack.MyIStack;
 import com.example.toylanguage.Model.ADT.Stack.MyStack;
 import com.example.toylanguage.Model.PrgState;
 import com.example.toylanguage.Model.Statments.IStmt;
+import com.example.toylanguage.Model.Values.StringValue;
 import com.example.toylanguage.Model.Values.Value;
 import com.example.toylanguage.Repository.MyIRepository;
 import com.example.toylanguage.Repository.MyRepository;
@@ -20,6 +22,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 
+import java.io.BufferedReader;
+
 public class ListViewController {
 
 	private ProgramViewController programViewController;
@@ -27,9 +31,8 @@ public class ListViewController {
 	public void setProgramViewController(ProgramViewController programViewController) {
 		this.programViewController = programViewController;
 	}
-	 @FXML
-	 private ListView<IStmt> statements;
-
+	@FXML
+	private ListView<IStmt> statements;
 	@FXML
 	private Button displayButton;
 	 
@@ -50,7 +53,8 @@ public class ListViewController {
 			 MyIStack<IStmt> stk = new MyStack<>();
 			 MyIDictionary<String, Value> sTable = new MyDictionary<>();
 			 MyIList<Value> ot = new MyList<>();
-			 PrgState prg = new PrgState(stk,sTable,ot,stmt);
+			 MyFileTable<StringValue, BufferedReader> ft = new MyFileTable<>();
+			 PrgState prg = new PrgState(stk,sTable,ot,ft,stmt);
 			 MyIRepository repo = new MyRepository(prg, "log"+index+".txt");
 			 Controller ctr = new Controller(repo);
 			 try{
