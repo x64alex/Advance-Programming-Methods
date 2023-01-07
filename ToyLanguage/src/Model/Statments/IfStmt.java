@@ -49,4 +49,16 @@ public class IfStmt implements IStmt {
     public IStmt deepCopy() {
         return new IfStmt(this.exp,this.thenS,this.elseS);
     }
+
+    @Override
+    public MyIDictionary<String, Type> typecheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typexp=exp.typecheck(typeEnv);
+        if (typexp.equals(new BoolType())) {
+            thenS.typecheck(typeEnv.deepCopy());
+            elseS.typecheck(typeEnv.deepCopy());
+            return typeEnv;
+        }
+        else
+            throw new MyException("The condition of IF has not the type bool");
+    }
 }

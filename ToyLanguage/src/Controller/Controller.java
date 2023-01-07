@@ -105,7 +105,7 @@ public class Controller implements IController{
     public void runTypeChecker() throws MyException {
         for (PrgState state: repo.getPrgList()) {
             MyIDictionary<String, Type> typeTable = new MyDictionary<>();
-            state.getStk().pop().typecheck(typeTable);
+            state.getStk().peek().typecheck(typeTable);
         }
     }
     @Override

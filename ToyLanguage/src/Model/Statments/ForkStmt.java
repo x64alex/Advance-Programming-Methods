@@ -8,6 +8,8 @@ import Model.ADT.List.MyList;
 import Model.ADT.Stack.MyIStack;
 import Model.ADT.Stack.MyStack;
 import Model.PrgState;
+import Model.Types.BoolType;
+import Model.Types.Type;
 import Model.Values.Value;
 
 public class ForkStmt implements IStmt{
@@ -34,5 +36,11 @@ public class ForkStmt implements IStmt{
     @Override
     public IStmt deepCopy() {
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typecheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        forkstmt.typecheck(typeEnv.deepCopy());
+        return  typeEnv;
     }
 }

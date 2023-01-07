@@ -1,5 +1,7 @@
 package Model.ADT.Stack;
 
+import Exceptions.MyException;
+
 import java.util.Iterator;
 import java.util.Stack;
 
@@ -21,6 +23,12 @@ public class MyStack<T> implements MyIStack<T>{
         return internalStack.isEmpty();
     }
 
+    @Override
+    public T peek() throws MyException {
+        if (internalStack.isEmpty())
+            throw new MyException("STACK ERROR: Stack is empty");
+        return internalStack.peek();
+    }
     @Override
     public String toString() {
         String s = "";
