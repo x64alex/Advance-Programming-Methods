@@ -2,8 +2,8 @@ package com.example.toylanguage.Model;
 
 
 import com.example.toylanguage.Exceptions.MyException;
-import com.example.toylanguage.Model.ADT.Dictionary.MyDictionary;
-import com.example.toylanguage.Model.ADT.Dictionary.MyIDictionary;
+import com.example.toylanguage.Model.ADT.SymTable.MyDictionary;
+import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.ADT.FileTable.MyFileTable;
 import com.example.toylanguage.Model.ADT.FileTable.MyIFileTable;
 import com.example.toylanguage.Model.ADT.Heap.MyHeap;

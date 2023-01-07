@@ -2,7 +2,7 @@ package com.example.toylanguage.Model.Statments;
 
 
 import com.example.toylanguage.Exceptions.MyException;
-import com.example.toylanguage.Model.ADT.Dictionary.MyIDictionary;
+import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.ADT.FileTable.MyIFileTable;
 import com.example.toylanguage.Model.ADT.List.MyIList;
 import com.example.toylanguage.Model.ADT.Stack.MyIStack;

@@ -3,6 +3,7 @@ package com.example.toylanguage.View.gui;
 import com.example.toylanguage.Controller.*;
 import com.example.toylanguage.Exceptions.MyException;
 import com.example.toylanguage.Model.ADT.Heap.MyIHeap;
+import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.PrgState;
 import com.example.toylanguage.Model.Statments.IStmt;
 import com.example.toylanguage.Model.Values.Value;
@@ -16,6 +17,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -53,11 +55,11 @@ public class ProgramViewController {
     @FXML
     public TableColumn<Pair<Integer, Value>, String> heapTableValue;
     @FXML
-    private TableView<Pair<Integer, Value>> symTable;
+    private TableView<Pair<String, Value>> symTableView;
     @FXML
-    public TableColumn<Pair<Integer, Value>, Integer> symTableName;
+    public TableColumn<Pair<String, Value>, String> symTableName;
     @FXML
-    public TableColumn<Pair<Integer, Value>, String> symTableValue;
+    public TableColumn<Pair<String, Value>, String> symTableValue;
     @FXML
     private ListView<Value> output;
     @FXML
@@ -72,9 +74,11 @@ public class ProgramViewController {
 
     @FXML
     public void initialize() {
-
         heapTableAddress.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().first).asObject());
         heapTableValue.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
+        symTableName.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first.toString()));
+        symTableValue.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
+
         runOneStep.setOnAction(actionEvent -> {
             if(ctr == null){
                 Alert alert = new Alert(Alert.AlertType.ERROR, "The program was not selected", ButtonType.OK);
@@ -101,6 +105,7 @@ public class ProgramViewController {
             public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
                 selectedPrgState = newValue;
                 populateExeStackTable();
+                populateSymTable();
             }
         });
     }
@@ -113,6 +118,7 @@ public class ProgramViewController {
         populateFileTable();
         populateProgramStates();
         populateExeStackTable();
+        populateSymTable();
     }
 
 
@@ -142,6 +148,22 @@ public class ProgramViewController {
     }
     private void populateExeStackTable() {
         PrgState prgState = ctr.getPrgState(selectedPrgState);
-        exeStackTable.setItems(FXCollections.observableArrayList(prgState.getStk().getElements()));
+        List<IStmt> exeStack = prgState.getStk().getElements();
+        List<IStmt> reversedStack = new ArrayList<>();
+        for (int i = exeStack.size() - 1; i >= 0 ; i--) {
+            reversedStack.add(exeStack.get(i));
+        }
+        exeStackTable.setItems(FXCollections.observableArrayList(reversedStack));
+    }
+
+    private void populateSymTable() {
+        PrgState prgState = ctr.getPrgState(selectedPrgState);
+        MyIDictionary<String, Value> symTable = prgState.getSymTable();
+        List<Pair<String, Value>> symTableList = new ArrayList<>();
+        for (Map.Entry<String, Value> entry : symTable.getContent().entrySet())
+            symTableList.add(new Pair<>(entry.getKey(), entry.getValue()));
+        symTableView.setItems(FXCollections.observableList(symTableList));
+        symTableView.refresh();
+
     }
 }

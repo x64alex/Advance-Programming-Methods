@@ -1,8 +1,8 @@
 package com.example.toylanguage.View.cli;
 
 
-import com.example.toylanguage.Model.ADT.Dictionary.MyDictionary;
-import com.example.toylanguage.Model.ADT.Dictionary.MyIDictionary;
+import com.example.toylanguage.Model.ADT.SymTable.MyDictionary;
+import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.ADT.FileTable.MyFileTable;
 import com.example.toylanguage.Model.ADT.List.MyIList;
 import com.example.toylanguage.Model.ADT.List.MyList;

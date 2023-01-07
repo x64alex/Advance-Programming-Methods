@@ -1,7 +1,9 @@
-package com.example.toylanguage.Model.ADT.Dictionary;
+package com.example.toylanguage.Model.ADT.SymTable;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MyDictionary<T,V> implements MyIDictionary<T,V>{
 
@@ -42,6 +44,11 @@ public class MyDictionary<T,V> implements MyIDictionary<T,V>{
     @Override
     public Collection<V> getValues() {
         return internalDictionary.values();
+    }
+
+    @Override
+    public Map<T, V> getContent(){
+        return internalDictionary;
     }
 
     public Collection<T> getKeys() {

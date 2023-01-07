@@ -2,7 +2,7 @@ package com.example.toylanguage.Model.Statments.RWStatments;
 
 
 import com.example.toylanguage.Exceptions.MyException;
-import com.example.toylanguage.Model.ADT.Dictionary.MyIDictionary;
+import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.ADT.FileTable.MyIFileTable;
 import com.example.toylanguage.Model.Expressions.Exp;
 import com.example.toylanguage.Model.PrgState;
