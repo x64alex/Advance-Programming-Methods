@@ -9,4 +9,6 @@ import java.util.List;
 public interface IController {
     List<PrgState> removeCompletedPrg(List<PrgState> inPrgList);
     void allStep() throws MyException;
+
+    int getNumberPrgStates();
 }

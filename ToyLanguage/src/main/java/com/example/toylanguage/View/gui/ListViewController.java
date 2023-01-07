@@ -21,7 +21,12 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 
 public class ListViewController {
-	
+
+	private ProgramViewController programViewController;
+
+	public void setProgramViewController(ProgramViewController programViewController) {
+		this.programViewController = programViewController;
+	}
 	 @FXML
 	 private ListView<IStmt> statements;
 
@@ -50,7 +55,7 @@ public class ListViewController {
 			 Controller ctr = new Controller(repo);
 			 try{
 				 ctr.runTypeChecker();
-				 //programController.setController(controller);
+				 programViewController.setController(ctr);
 			 } catch (MyException exception) {
 				 Alert alert = new Alert(Alert.AlertType.ERROR, exception.getMessage(), ButtonType.OK);
 				 alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);

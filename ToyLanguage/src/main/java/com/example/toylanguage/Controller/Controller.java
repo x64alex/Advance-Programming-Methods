@@ -128,4 +128,9 @@ public class Controller implements IController{
 // update the repository state
             repo.setPrgList(prgList);
         }
+
+    @Override
+    public int getNumberPrgStates() {
+        return repo.getPrgList().size();
+    }
 }
