@@ -120,7 +120,7 @@ public class Controller implements IController{
     @Override
     public void allStep() throws MyException{
             runTypeChecker();
-            executor = Executors.newFixedThreadPool(2);
+            executor = Executors.newFixedThreadPool(1);
             List<PrgState> prgList=removeCompletedPrg(repo.getPrgList());
             while(prgList.size() > 0){
                 conservativeGarbageCollector(prgList);
@@ -135,7 +135,7 @@ public class Controller implements IController{
 
     @Override
     public void oneStepAll() throws MyException {
-        executor = Executors.newFixedThreadPool(2);
+        executor = Executors.newFixedThreadPool(1);
         List<PrgState> prgList=removeCompletedPrg(repo.getPrgList());
         conservativeGarbageCollector(prgList);
         oneStepForAllPrg(prgList);

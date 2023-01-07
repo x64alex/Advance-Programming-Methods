@@ -3,6 +3,7 @@ package com.example.toylanguage.Model;
 
 import com.example.toylanguage.Exceptions.MyException;
 import com.example.toylanguage.Model.ADT.Dictionary.MyIDictionary;
+import com.example.toylanguage.Model.ADT.FileTable.MyFileTable;
 import com.example.toylanguage.Model.ADT.FileTable.MyIFileTable;
 import com.example.toylanguage.Model.ADT.Heap.MyHeap;
 import com.example.toylanguage.Model.ADT.Heap.MyIHeap;
@@ -52,15 +53,15 @@ public class PrgState {
         return this.exeStack;
     }
 
-    public MyIDictionary<String, Value> getSymTable() {return this.symTable; }
+    public MyIDictionary<String, Value> getSymTable() {return this.symTable;}
 
-    public MyIList<Value> getIList() {return this.out; }
+    public MyIList<Value> getIList() {return this.out;}
 
     public MyIFileTable<StringValue, BufferedReader> getFileTable() {return  this.FileTable;}
 
     public MyIHeap<Integer, Value> getHeap() {return this.heap; }
 
-    public void setHeap(MyIHeap<Integer, Value> newHeap) {this.heap = newHeap; }
+    public void setHeap(MyIHeap<Integer, Value> newHeap) {this.heap = newHeap;}
 
 
     public Boolean isNotCompleted() {return !this.exeStack.isEmpty();}

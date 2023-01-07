@@ -87,6 +87,7 @@ public class ProgramViewController {
         populateTextField();
         populateHeap();
         populateOutput();
+        populateFileTable();
     }
 
 
@@ -109,6 +110,6 @@ public class ProgramViewController {
     }
 
     private void populateFileTable() {
-        output.setItems(FXCollections.observableArrayList(ctr.getFileTable().getFileNames()));
+        fileTable.setItems(FXCollections.observableArrayList(ctr.getFileTable().getFileNames()));
     }
 }

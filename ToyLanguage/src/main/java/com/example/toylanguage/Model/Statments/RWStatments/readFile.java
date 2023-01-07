@@ -74,6 +74,6 @@ public class readFile implements IStmt {
 
     @Override
     public String toString() {
-        return "readFile of "+exp;
+        return "readFile of "+exp + "in: "+ var_name;
     }
 }
