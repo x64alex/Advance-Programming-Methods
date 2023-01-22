@@ -12,9 +12,8 @@ public class MyHeap<Int,V> implements MyIHeap<Int,V> {
     }
     public int getFreeLocation(){return freeLocation;}
 
-    synchronized public int getNextFree() {
+    synchronized public void getNextFree() {
         this.freeLocation +=1;
-        return this.freeLocation;
     }
     @Override
     public void update(Int id, V val) {
@@ -26,7 +25,7 @@ public class MyHeap<Int,V> implements MyIHeap<Int,V> {
         //TODO:Check if the position is 0 first
         internalDictionary.put(this.freeLocation,val);
         //TODO: Syncronize getNextFree within the whole app
-        this.freeLocation +=1;
+        getNextFree();
     }
     @Override
     public V lookup(Int id) {
