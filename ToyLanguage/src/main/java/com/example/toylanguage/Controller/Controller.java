@@ -132,12 +132,13 @@ public class Controller implements IController{
 
     @Override
     public void oneStepAll() throws MyException {
-        executor = Executors.newFixedThreadPool(1);
+        executor = Executors.newFixedThreadPool(2);
         List<PrgState> prgList=removeCompletedPrg(repo.getPrgList());
         conservativeGarbageCollector(prgList);
         oneStepForAllPrg(prgList);
         //remove the completed programs
-        prgList=removeCompletedPrg(repo.getPrgList());
+        //TODO: Comment this to get last print
+        //prgList=removeCompletedPrg(repo.getPrgList());
 
         executor.shutdownNow();
         repo.setPrgList(prgList);
