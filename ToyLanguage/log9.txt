@@ -1,5 +1,6 @@
+Id:2
 ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))))
+(v=Ref(Int);(new(v,ValueExp{e=20});(a=Ref(Ref(Int));(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}})))))))
 
 SymTable:
 
@@ -10,121 +11,10 @@ FileTable:
 Heap:
 
 
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(RhExp{e=VarExp{id='v'}})
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-WriteHeapv=ValueExp{e=30}
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
+Id:2
 ExeStack:
 v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
+(new(v,ValueExp{e=20});(a=Ref(Ref(Int));(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))))))
 
 SymTable:
 
@@ -135,108 +25,10 @@ FileTable:
 Heap:
 
 
-ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(RhExp{e=VarExp{id='v'}})
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-WriteHeapv=ValueExp{e=30}
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
+Id:2
 ExeStack:
 v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
+(new(v,ValueExp{e=20});(a=Ref(Ref(Int));(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))))))
 
 SymTable:
 
@@ -247,8 +39,9 @@ FileTable:
 Heap:
 
 
+Id:2
 ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
+(new(v,ValueExp{e=20});(a=Ref(Ref(Int));(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))))))
 
 SymTable:
 v=(0,Int)
@@ -260,9 +53,24 @@ FileTable:
 Heap:
 
 
+Id:2
+ExeStack:
+(new(v,ValueExp{e=20});(a=Ref(Ref(Int));(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))))))
+
+SymTable:
+v=(0,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:2
 ExeStack:
 new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
+(a=Ref(Ref(Int));(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}})))))
 
 SymTable:
 v=(0,Int)
@@ -274,107 +82,10 @@ FileTable:
 Heap:
 
 
-ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(RhExp{e=VarExp{id='v'}})
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-WriteHeapv=ValueExp{e=30}
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
+Id:2
 ExeStack:
 new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
+(a=Ref(Ref(Int));(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}})))))
 
 SymTable:
 v=(0,Int)
@@ -386,8 +97,9 @@ FileTable:
 Heap:
 
 
+Id:2
 ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
+(a=Ref(Ref(Int));(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}})))))
 
 SymTable:
 v=(1,Int)
@@ -400,9 +112,9 @@ Heap:
 1->20
 
 
+Id:2
 ExeStack:
-print(RhExp{e=VarExp{id='v'}})
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
+(a=Ref(Ref(Int));(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}})))))
 
 SymTable:
 v=(1,Int)
@@ -415,11 +127,332 @@ Heap:
 1->20
 
 
+Id:2
 ExeStack:
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
+a=Ref(Ref(Int))
+(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))))
 
 SymTable:
 v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+
+
+Id:2
+ExeStack:
+a=Ref(Ref(Int))
+(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))))
+
+SymTable:
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+
+
+Id:2
+ExeStack:
+(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))))
+
+SymTable:
+a=(0,Ref(Int))
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+
+
+Id:2
+ExeStack:
+(new(a,VarExp{id='v'});((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))))
+
+SymTable:
+a=(0,Ref(Int))
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+
+
+Id:2
+ExeStack:
+new(a,VarExp{id='v'})
+((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}})))
+
+SymTable:
+a=(0,Ref(Int))
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+
+
+Id:2
+ExeStack:
+new(a,VarExp{id='v'})
+((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}})))
+
+SymTable:
+a=(0,Ref(Int))
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+
+
+Id:2
+ExeStack:
+((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}})))
+
+SymTable:
+a=(2,Ref(Int))
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+
+
+Id:2
+ExeStack:
+((new(v,ValueExp{e=30});new(v,ValueExp{e=40}));(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}})))
+
+SymTable:
+a=(2,Ref(Int))
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+
+
+Id:2
+ExeStack:
+(new(v,ValueExp{e=30});new(v,ValueExp{e=40}))
+(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))
+
+SymTable:
+a=(2,Ref(Int))
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+
+
+Id:2
+ExeStack:
+(new(v,ValueExp{e=30});new(v,ValueExp{e=40}))
+(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))
+
+SymTable:
+a=(2,Ref(Int))
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+
+
+Id:2
+ExeStack:
+new(v,ValueExp{e=30})
+new(v,ValueExp{e=40})
+(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))
+
+SymTable:
+a=(2,Ref(Int))
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+
+
+Id:2
+ExeStack:
+new(v,ValueExp{e=30})
+new(v,ValueExp{e=40})
+(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))
+
+SymTable:
+a=(2,Ref(Int))
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+
+
+Id:2
+ExeStack:
+new(v,ValueExp{e=40})
+(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))
+
+SymTable:
+a=(2,Ref(Int))
+v=(3,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+3->30
+
+
+Id:2
+ExeStack:
+new(v,ValueExp{e=40})
+(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))
+
+SymTable:
+a=(2,Ref(Int))
+v=(3,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+3->30
+
+
+Id:2
+ExeStack:
+(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))
+
+SymTable:
+a=(2,Ref(Int))
+v=(4,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+3->30
+4->40
+
+
+Id:2
+ExeStack:
+(print(RhExp{e=RhExp{e=VarExp{id='a'}}});print(RhExp{e=RhExp{e=VarExp{id='a'}}}))
+
+SymTable:
+a=(2,Ref(Int))
+v=(4,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+4->40
+
+
+Id:2
+ExeStack:
+print(RhExp{e=RhExp{e=VarExp{id='a'}}})
+print(RhExp{e=RhExp{e=VarExp{id='a'}}})
+
+SymTable:
+a=(2,Ref(Int))
+v=(4,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+4->40
+
+
+Id:2
+ExeStack:
+print(RhExp{e=RhExp{e=VarExp{id='a'}}})
+print(RhExp{e=RhExp{e=VarExp{id='a'}}})
+
+SymTable:
+a=(2,Ref(Int))
+v=(4,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+2->(1,Int)
+4->40
+
+
+Id:2
+ExeStack:
+print(RhExp{e=RhExp{e=VarExp{id='a'}}})
+
+SymTable:
+a=(2,Ref(Int))
+v=(4,Int)
 
 Out:
 20
@@ -428,14 +461,17 @@ FileTable:
 
 Heap:
 1->20
+2->(1,Int)
+4->40
 
 
+Id:2
 ExeStack:
-WriteHeapv=ValueExp{e=30}
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
+print(RhExp{e=RhExp{e=VarExp{id='a'}}})
 
 SymTable:
-v=(1,Int)
+a=(2,Ref(Int))
+v=(4,Int)
 
 Out:
 20
@@ -444,545 +480,30 @@ FileTable:
 
 Heap:
 1->20
+2->(1,Int)
+4->40
 
 
+Id:2
 ExeStack:
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
 
 SymTable:
-v=(1,Int)
+a=(2,Ref(Int))
+v=(4,Int)
 
 Out:
 20
-
-FileTable:
-
-Heap:
-1->30
-
-
-ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(RhExp{e=VarExp{id='v'}})
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
 20
 
 FileTable:
 
 Heap:
 1->20
+2->(1,Int)
+4->40
 
 
-ExeStack:
-WriteHeapv=ValueExp{e=30}
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->30
-
-
-ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(RhExp{e=VarExp{id='v'}})
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-WriteHeapv=ValueExp{e=30}
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->30
-
-
-ExeStack:
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->30
-
-
-ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(RhExp{e=VarExp{id='v'}})
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-WriteHeapv=ValueExp{e=30}
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->30
-
-
-ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(RhExp{e=VarExp{id='v'}})
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(WriteHeapv=ValueExp{e=30};print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-WriteHeapv=ValueExp{e=30}
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(ArithExp{e1=RhExp{e=RhExp{e=VarExp{id='v'}}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->30
-
-
+Id:8
 ExeStack:
 (v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))))
 
@@ -995,6 +516,7 @@ FileTable:
 Heap:
 
 
+Id:8
 ExeStack:
 v=Ref(Int)
 (new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
@@ -1008,6 +530,21 @@ FileTable:
 Heap:
 
 
+Id:8
+ExeStack:
+v=Ref(Int)
+(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
+
+SymTable:
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:8
 ExeStack:
 (new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
 
@@ -1021,6 +558,21 @@ FileTable:
 Heap:
 
 
+Id:8
+ExeStack:
+(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
+
+SymTable:
+v=(0,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:8
 ExeStack:
 new(v,ValueExp{e=20})
 (print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
@@ -1035,6 +587,22 @@ FileTable:
 Heap:
 
 
+Id:8
+ExeStack:
+new(v,ValueExp{e=20})
+(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
+
+SymTable:
+v=(0,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:8
 ExeStack:
 (print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
 
@@ -1049,6 +617,22 @@ Heap:
 1->20
 
 
+Id:8
+ExeStack:
+(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
+
+SymTable:
+v=(1,Int)
+
+Out:
+
+FileTable:
+
+Heap:
+1->20
+
+
+Id:8
 ExeStack:
 print(RhExp{e=VarExp{id='v'}})
 (WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))
@@ -1064,133 +648,7 @@ Heap:
 1->20
 
 
-ExeStack:
-(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->30
-
-
-ExeStack:
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-1->30
-
-
-ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
+Id:8
 ExeStack:
 print(RhExp{e=VarExp{id='v'}})
 (WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))
@@ -1206,6 +664,7 @@ Heap:
 1->20
 
 
+Id:8
 ExeStack:
 (WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))
 
@@ -1221,133 +680,7 @@ Heap:
 1->20
 
 
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->30
-
-
-ExeStack:
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-1->30
-
-
-ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(RhExp{e=VarExp{id='v'}})
-(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
+Id:8
 ExeStack:
 (WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))
 
@@ -1363,6 +696,7 @@ Heap:
 1->20
 
 
+Id:8
 ExeStack:
 WriteHeap{v=ValueExp{e=30}}
 print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
@@ -1379,6 +713,24 @@ Heap:
 1->20
 
 
+Id:8
+ExeStack:
+WriteHeap{v=ValueExp{e=30}}
+print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
+
+SymTable:
+v=(1,Int)
+
+Out:
+20
+
+FileTable:
+
+Heap:
+1->20
+
+
+Id:8
 ExeStack:
 print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
 
@@ -1394,133 +746,7 @@ Heap:
 1->30
 
 
-ExeStack:
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-1->30
-
-
-ExeStack:
-(v=Ref(Int);(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-ExeStack:
-(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-print(RhExp{e=VarExp{id='v'}})
-(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(1,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-1->20
-
-
+Id:8
 ExeStack:
 print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
 
@@ -1536,6 +762,7 @@ Heap:
 1->30
 
 
+Id:8
 ExeStack:
 
 SymTable:
@@ -1549,389 +776,5 @@ FileTable:
 
 Heap:
 1->30
-
-
-Id:0
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-Id:0
-ExeStack:
-v=Ref(Int)
-(new(v,ValueExp{e=20});(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+}))))
-
-SymTable:
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-Id:0
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-Id:0
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-Id:0
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-Id:0
-ExeStack:
-new(v,ValueExp{e=20})
-(print(RhExp{e=VarExp{id='v'}});(WriteHeap{v=ValueExp{e=30}};print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})))
-
-SymTable:
-v=(0,Int)
-
-Out:
-
-FileTable:
-
-Heap:
-
-
-Id:0
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-31->20
-
-
-Id:0
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-31->20
-
-
-Id:0
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-31->20
-
-
-Id:0
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-31->20
-
-
-Id:0
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-31->20
-
-
-Id:0
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-31->20
-
-
-Id:0
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-31->20
-
-
-Id:0
-ExeStack:
-WriteHeap{v=ValueExp{e=30}}
-print(ArithExp{e1=RhExp{e=VarExp{id='v'}}, e2=ValueExp{e=5}, op=+})
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-
-FileTable:
-
-Heap:
-31->20
-
-
-Id:0
-ExeStack:
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-31->30
-
-
-Id:0
-ExeStack:
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-31->30
-
-
-Id:0
-ExeStack:
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-31->30
-
-
-Id:0
-ExeStack:
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-31->30
-
-
-Id:0
-ExeStack:
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-31->30
-
-
-Id:0
-ExeStack:
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-31->30
-
-
-Id:0
-ExeStack:
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-31->30
-
-
-Id:0
-ExeStack:
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-31->30
-
-
-Id:0
-ExeStack:
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-31->30
-
-
-Id:0
-ExeStack:
-
-SymTable:
-v=(31,Int)
-
-Out:
-20
-35
-
-FileTable:
-
-Heap:
-31->30
 
 

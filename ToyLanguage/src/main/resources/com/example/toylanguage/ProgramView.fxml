@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="1251.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.toylanguage.View.gui.ProgramViewController">
+   <children>
+      <TextField fx:id="prgStates" layoutX="93.0" layoutY="28.0" prefHeight="26.0" prefWidth="27.0" />
+      <Label layoutX="24.0" layoutY="32.0" text="PrgStates" />
+      <TableView fx:id="heapTable" layoutX="20.0" layoutY="94.0" prefHeight="200.0" prefWidth="151.0">
+        <columns>
+          <TableColumn fx:id="heapTableAddress" prefWidth="75.0" text="Address" />
+          <TableColumn fx:id="heapTableValue" prefWidth="75.0" text="Value" />
+        </columns>
+      </TableView>
+      <Button fx:id="runOneStep" layoutX="182.0" layoutY="303.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="151.0" text="Run one step" />
+      <Label layoutX="64.0" layoutY="65.0" text="Heap Table" />
+      <Label layoutX="254.0" layoutY="65.0" text="Out" />
+      <ListView fx:id="output" layoutX="189.0" layoutY="94.0" prefHeight="200.0" prefWidth="151.0" />
+      <ListView fx:id="fileTable" layoutX="366.0" layoutY="94.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="441.0" layoutY="65.0" text="FileTable" />
+      <Label layoutX="588.0" layoutY="65.0" text="PrgState identifiers" />
+      <ListView fx:id="programStates" layoutX="588.0" layoutY="94.0" prefHeight="200.0" prefWidth="104.0" />
+      <TableView fx:id="symTableView" layoutX="723.0" layoutY="94.0" prefHeight="200.0" prefWidth="151.0">
+        <columns>
+          <TableColumn fx:id="symTableName" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="symTableValue" prefWidth="75.0" text="Value" />
+        </columns>
+      </TableView>
+      <Label layoutX="1039.0" layoutY="65.0" text="ExeStack" />
+      <ListView fx:id="exeStackTable" layoutX="892.0" layoutY="94.0" prefHeight="200.0" prefWidth="345.0" />
+      <Label layoutX="761.0" layoutY="65.0" text="Symbol Table" />
+   </children>
+</AnchorPane>
