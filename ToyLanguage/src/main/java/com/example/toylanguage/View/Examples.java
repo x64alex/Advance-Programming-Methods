@@ -128,7 +128,13 @@ public class Examples {
                 new PrintStmt(new ArithExp('*',new VarExp("v"), new ValueExp(new IntValue(10))))
         ));
 
+        //v=20; wait(10);print(v*10)
+        IStmt ex14 = new CompStmt(new VarDeclStmt("v",new IntType()), new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(20))),
+                new CompStmt(new WaitStmt(new IntValue(10)), new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10)))))
+                )
+        );
 
-        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13};
+
+        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14};
     }
 }
