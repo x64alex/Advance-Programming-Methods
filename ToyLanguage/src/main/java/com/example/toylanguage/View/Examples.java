@@ -223,6 +223,16 @@ public class Examples {
                 )
         );
 
-        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15, ex16, ex17, ex18, ex19};
+        // int v1;int v2;
+        // v1=2;v2=3;
+        // print(MUL(v1,v2))
+        IStmt ex20 = new CompStmt(new CompStmt(
+                new CompStmt(new VarDeclStmt("v1", new IntType()), new VarDeclStmt("v2", new IntType())),
+                new CompStmt(new AssignStmt("v1", new ValueExp(new IntValue(2))), new AssignStmt("v2", new ValueExp(new IntValue(3))))
+        ),
+                new PrintStmt(new MULExp(new VarExp("v1"), new VarExp("v2")))
+                );
+
+        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15, ex16, ex17, ex18, ex19, ex20};
     }
 }
