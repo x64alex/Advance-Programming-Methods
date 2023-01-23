@@ -18,10 +18,28 @@ public class MyLockTable<Integer,Int> implements MyILockTable<Integer,Integer>{
         this.freeLocation +=1;
     }
 
+
     @Override
-    public void initialize(Integer val){
+    synchronized public boolean isDefined(Integer id) {
+        return internalDictionary.containsKey(id);
+    }
+
+    @Override
+    public void update(Integer id, Integer val) {
+        internalDictionary.put((java.lang.Integer) id,val);
+    }
+
+    @Override
+    public Integer lookup(Integer id) {
+        return internalDictionary.get(id);
+    }
+
+    @Override
+    synchronized public void initialize(Integer val){
         internalDictionary.put(this.freeLocation,val);
         getNextFree();
     }
+
+
 
 }

@@ -3,6 +3,9 @@ package com.example.toylanguage.View;
 
 import com.example.toylanguage.Model.Expressions.*;
 import com.example.toylanguage.Model.Statments.*;
+import com.example.toylanguage.Model.Statments.Lock.lock;
+import com.example.toylanguage.Model.Statments.Lock.newLock;
+import com.example.toylanguage.Model.Statments.Lock.unlock;
 import com.example.toylanguage.Model.Statments.RWStatments.closeRFile;
 import com.example.toylanguage.Model.Statments.RWStatments.openRFile;
 import com.example.toylanguage.Model.Statments.RWStatments.readFile;
@@ -13,6 +16,7 @@ import com.example.toylanguage.Model.Types.StringType;
 import com.example.toylanguage.Model.Values.BoolValue;
 import com.example.toylanguage.Model.Values.IntValue;
 import com.example.toylanguage.Model.Values.StringValue;
+import com.example.toylanguage.Model.Values.Value;
 
 public class Examples {
     public static IStmt[] exampleList() {
@@ -117,6 +121,34 @@ public class Examples {
 
         IStmt ex12 = new CompStmt(new VarDeclStmt("v", new IntType()), new AssignStmt("v",new ValueExp(new StringValue("ad"))));
 
-        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12};
+
+        // Ref int v1; Ref int v2; int x; int q;
+        //new(v1,20);new(v2,30);newLock(x);
+        //fork(
+        //fork(
+        //lock(x);wh(v1,rh(v1)-1);unlock(x)
+        //);
+        //lock(x);wh(v1,rh(v1)*10);unlock(x)
+        //)
+        IStmt ex13 = new CompStmt(new CompStmt(
+                new VarDeclStmt("v1", new RefType(new IntType())),new VarDeclStmt("v2", new RefType(new IntType()))
+        ),
+                new CompStmt(new CompStmt( new VarDeclStmt("x", new IntType()),
+                        new VarDeclStmt("q", new IntType())
+                ), new CompStmt(
+                        new CompStmt(new CompStmt(new NewStmt("v1",new ValueExp(new IntValue(20))), new NewStmt("v2",new ValueExp(new IntValue(30)))),
+                                new ForkStmt(new CompStmt (new ForkStmt(new CompStmt(new CompStmt(new lock("x"), new WhStmt("v1",new ArithExp('-',new RhExp(new VarExp("v1")), new ValueExp(new IntValue(1))))),new unlock("x"))),
+                                        new CompStmt(new CompStmt(new lock("x"), new WhStmt("v1",new ArithExp('*',new RhExp(new VarExp("v1")), new ValueExp(new IntValue(10))))),new unlock("x"))))
+                                ),
+                       new CompStmt(new CompStmt(
+                               new CompStmt(new NopStmt(), new NopStmt()),
+                               new CompStmt(new CompStmt(new lock("x"), new PrintStmt(new RhExp(new VarExp("v1")))), new unlock("x")
+                       )),
+                               new newLock("q")
+                               )
+                )
+                        ));
+
+        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13};
     }
 }
