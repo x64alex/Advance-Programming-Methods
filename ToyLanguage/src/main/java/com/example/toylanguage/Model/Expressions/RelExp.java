@@ -53,7 +53,7 @@ public class RelExp implements Exp{
         typ2=e2.typecheck(typeEnv);
         if(typ1.equals(new IntType())){
             if(typ2.equals(new IntType())){
-                return new IntType();
+                return new BoolType();
             }
             else throw new MyException("second operand is not an integer");
         }
@@ -62,7 +62,7 @@ public class RelExp implements Exp{
 
     @Override
     public String toString() {
-        return "LogicExp{" +
+        return "RelExp{" +
                 "e1=" + e1 +
                 ", op=" + operand +
                 ", e2=" + e2 +
