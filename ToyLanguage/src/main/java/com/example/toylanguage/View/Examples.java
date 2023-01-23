@@ -146,7 +146,28 @@ public class Examples {
                 new PrintStmt(new ArithExp('*',new VarExp("v"), new ValueExp(new IntValue(10))))
         ));
 
+        //int a; int b; int c;
+        //a=1;b=2;c=5;
+        //(switch(a*10)
+        //(case (b*c) : print(a);print(b))
+        //(case (10) : print(100);print(200))
+        //(default : print(300)));
+        //print(300)
+        IStmt ex16 = new CompStmt(new CompStmt(new CompStmt(new CompStmt(new VarDeclStmt("a", new IntType()), new VarDeclStmt("b", new IntType())),
+                new VarDeclStmt("c", new IntType())),
+                new CompStmt(new AssignStmt("a", new ValueExp(new IntValue(1))), new AssignStmt("b", new ValueExp(new IntValue(2))))), new CompStmt(
+                        new AssignStmt("c", new ValueExp(new IntValue(5))),
+                new CompStmt(new SwitchStmt(new ArithExp('*', new VarExp("a"), new ValueExp(new IntValue(10))),
+                        new ArithExp('*', new VarExp("b"), new VarExp("c")),
+                        new ValueExp(new IntValue(10)),
+                        new CompStmt(new PrintStmt(new VarExp("a")), new PrintStmt(new VarExp("b"))),
+                        new CompStmt(new PrintStmt(new ValueExp(new IntValue(100))), new PrintStmt(new ValueExp(new IntValue(200)))),
+                        new PrintStmt(new ValueExp(new IntValue(300)))
+                        )
+                        ,new PrintStmt(new ValueExp(new IntValue(300))))
+        ));
 
-        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15};
+
+        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15, ex16};
     }
 }
