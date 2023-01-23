@@ -2,6 +2,8 @@ package com.example.toylanguage.Model.Statments;
 
 
 import com.example.toylanguage.Exceptions.MyException;
+import com.example.toylanguage.Model.ADT.LockTable.MyILockTable;
+import com.example.toylanguage.Model.ADT.LockTable.MyLockTable;
 import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.ADT.FileTable.MyIFileTable;
 import com.example.toylanguage.Model.ADT.List.MyIList;
@@ -31,7 +33,8 @@ public class ForkStmt implements IStmt{
         MyIDictionary<String, Value> sTable = state.getSymTable().deepCopy();
         MyIList<Value> ot = state.getIList();
         MyIFileTable<StringValue, BufferedReader> fileTable= state.getFileTable();
-        PrgState newPrgState = new PrgState(stk, sTable,ot,fileTable, forkstmt);
+        MyILockTable<Integer, Integer> lockTable = state.getLockTable();
+        PrgState newPrgState = new PrgState(stk, sTable,ot,fileTable,lockTable, forkstmt);
         newPrgState.setHeap(state.getHeap());
         return newPrgState;
     }

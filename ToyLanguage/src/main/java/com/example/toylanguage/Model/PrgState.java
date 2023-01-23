@@ -2,6 +2,8 @@ package com.example.toylanguage.Model;
 
 
 import com.example.toylanguage.Exceptions.MyException;
+import com.example.toylanguage.Model.ADT.LockTable.MyILockTable;
+import com.example.toylanguage.Model.ADT.LockTable.MyLockTable;
 import com.example.toylanguage.Model.ADT.SymTable.MyDictionary;
 import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.ADT.FileTable.MyFileTable;
@@ -27,6 +29,8 @@ public class PrgState {
     MyIDictionary<String, Value> symTable;
     MyIList<Value> out;
 
+    MyILockTable<Integer, Integer> lockTable;
+
     MyIHeap<Integer, Value> heap;
 
     MyIFileTable<StringValue, BufferedReader> FileTable;
@@ -35,6 +39,7 @@ public class PrgState {
                     MyIDictionary<String,Value> sTable,
                     MyIList<Value> ot,
                     MyIFileTable<StringValue, BufferedReader> ft,
+                    MyILockTable<Integer, Integer> lt,
                     IStmt prg){
         exeStack=stk;
         symTable=sTable;
@@ -42,6 +47,7 @@ public class PrgState {
         originalProgram=prg.deepCopy();//recreate the entire original prg
         FileTable = ft;
         heap = new MyHeap<>();
+        lockTable = lt;
         stk.push(prg);
         this.currentId = id;
         id +=1;
@@ -71,6 +77,9 @@ public class PrgState {
     public MyIFileTable<StringValue, BufferedReader> getFileTable() {return  this.FileTable;}
 
     public MyIHeap<Integer, Value> getHeap() {return this.heap; }
+
+    public MyILockTable<Integer, Integer> getLockTable() {return this.lockTable; };
+
 
     public void setHeap(MyIHeap<Integer, Value> newHeap) {this.heap = newHeap;}
 

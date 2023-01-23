@@ -1,6 +1,8 @@
 package com.example.toylanguage.View.cli;
 
 
+import com.example.toylanguage.Model.ADT.LockTable.MyILockTable;
+import com.example.toylanguage.Model.ADT.LockTable.MyLockTable;
 import com.example.toylanguage.Model.ADT.SymTable.MyDictionary;
 import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.ADT.FileTable.MyFileTable;
@@ -32,7 +34,8 @@ class Interpreter {
             MyIDictionary<String, Value> sTable = new MyDictionary<>();
             MyIList<Value> ot = new MyList<>();
             MyFileTable<StringValue, BufferedReader> ft = new MyFileTable<>();
-            PrgState prg = new PrgState(stk,sTable,ot,ft,stmt);
+            MyILockTable<Integer, Integer> lockTable = new MyLockTable<>();
+            PrgState prg = new PrgState(stk,sTable,ot,ft,lockTable,stmt);
             MyIRepository repo = new MyRepository(prg, "log"+Integer.toString(pos)+".txt");
             Controller ctr = new Controller(repo);
             menu.addCommand(new RunExample(Integer.toString(pos), stmt.toString(), ctr));

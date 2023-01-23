@@ -3,6 +3,8 @@ package com.example.toylanguage.View.gui;
 
 import com.example.toylanguage.Controller.Controller;
 import com.example.toylanguage.Exceptions.MyException;
+import com.example.toylanguage.Model.ADT.LockTable.MyILockTable;
+import com.example.toylanguage.Model.ADT.LockTable.MyLockTable;
 import com.example.toylanguage.Model.ADT.SymTable.MyDictionary;
 import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.ADT.FileTable.MyFileTable;
@@ -54,7 +56,8 @@ public class ListViewController {
 			 MyIDictionary<String, Value> sTable = new MyDictionary<>();
 			 MyIList<Value> ot = new MyList<>();
 			 MyFileTable<StringValue, BufferedReader> ft = new MyFileTable<>();
-			 PrgState prg = new PrgState(stk,sTable,ot,ft,stmt);
+			 MyILockTable<Integer, Integer> lockTable = new MyLockTable<>();
+			 PrgState prg = new PrgState(stk,sTable,ot,ft,lockTable,stmt);
 			 MyIRepository repo = new MyRepository(prg, "log"+index+".txt");
 			 Controller ctr = new Controller(repo);
 			 try{
