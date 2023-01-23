@@ -184,6 +184,45 @@ public class Examples {
                 new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))))
         ));
 
-        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15, ex16, ex17};
+        //bool b;
+        //int c;
+        //b=true;
+        //c=b?100:200;
+        //print(c);
+        //c= (false)?100:200;
+        //print(c);
+        IStmt ex18 = new CompStmt(
+                new CompStmt(new VarDeclStmt("b", new BoolType()),new VarDeclStmt("c", new IntType())),
+                new CompStmt(new AssignStmt("b", new ValueExp(new BoolValue(true))), new CompStmt(
+                        new CompStmt(new ConditionalStmt("c", new VarExp("b"), new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))),new PrintStmt(new VarExp("c"))),
+                        new CompStmt(new ConditionalStmt("c", new ValueExp(new BoolValue(false)), new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))),new PrintStmt(new VarExp("c")))
+                ))
+        );
+
+        //Ref int a; Ref int b; int v;
+        //new(a,0); new(b,0);
+        //wh(a,1); wh(b,2);
+        //v=(rh(a)<rh(b))?100:200;
+        //print(v);
+        //v= ((rh(b)-2)>rh(a))?100:200;
+        //print(v);
+        IStmt ex19 = new CompStmt(
+                new CompStmt(new CompStmt(new VarDeclStmt("a", new RefType(new IntType())), new VarDeclStmt("b", new RefType(new IntType()))),
+                        new VarDeclStmt("v", new IntType())
+                        ),
+                new CompStmt( new CompStmt(
+                        new CompStmt(new NewStmt("a", new ValueExp(new IntValue(0))),
+                                new NewStmt("b", new ValueExp(new IntValue(0)))
+                        ),
+                        new CompStmt(new WhStmt("a", new ValueExp(new IntValue(1))), new WhStmt("b", new ValueExp(new IntValue(2))))
+                ),
+                        new CompStmt(
+                        new CompStmt(new ConditionalStmt("v",new RelExp("<",new RhExp(new VarExp("a")), new RhExp(new VarExp("b"))), new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))),new PrintStmt(new VarExp("v"))),
+                        new CompStmt(new ConditionalStmt("v",new RelExp(">",new ArithExp('-',new RhExp(new VarExp("a")), new ValueExp(new IntValue(2))), new RhExp(new VarExp("a"))), new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))),new PrintStmt(new VarExp("v")))
+                )
+                )
+        );
+
+        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15, ex16, ex17, ex18, ex19};
     }
 }
