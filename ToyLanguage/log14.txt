@@ -1,0 +1,886 @@
+Id:0
+ExeStack:
+(v=Int;((While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})))
+
+SymTable:
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+v=Int
+((While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*}))
+
+SymTable:
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+v=Int
+((While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*}))
+
+SymTable:
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+((While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*}))
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+((While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*}))
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:1
+ExeStack:
+(print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:1
+ExeStack:
+(print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=1
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:1
+ExeStack:
+print(VarExp{id='v'})
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=1
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:1
+ExeStack:
+print(VarExp{id='v'})
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=0
+
+Out:
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:1
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=0
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:1
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=0
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:1
+ExeStack:
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:2
+ExeStack:
+(print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:2
+ExeStack:
+(print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=2
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:2
+ExeStack:
+print(VarExp{id='v'})
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=2
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:2
+ExeStack:
+print(VarExp{id='v'})
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=1
+
+Out:
+0
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:2
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=1
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:2
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=1
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:2
+ExeStack:
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:3
+ExeStack:
+(print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:3
+ExeStack:
+(print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+})
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=3
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:3
+ExeStack:
+print(VarExp{id='v'})
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+(While(RelExp{e1=VarExp{id='v'}, op=<, e2=ValueExp{e=3}})(Fork:((print(VarExp{id='v'});v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}));v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}))
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=3
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:3
+ExeStack:
+print(VarExp{id='v'})
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=2
+
+Out:
+0
+1
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=3
+
+Out:
+0
+1
+2
+
+FileTable:
+
+Heap:
+
+
+Id:3
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=2
+
+Out:
+0
+1
+2
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+print(ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=10}, op=*})
+
+SymTable:
+v=3
+
+Out:
+0
+1
+2
+
+FileTable:
+
+Heap:
+
+
+Id:3
+ExeStack:
+v=ArithExp{e1=VarExp{id='v'}, e2=ValueExp{e=1}, op=+}
+
+SymTable:
+v=2
+
+Out:
+0
+1
+2
+
+FileTable:
+
+Heap:
+
+
+Id:0
+ExeStack:
+
+SymTable:
+v=3
+
+Out:
+0
+1
+2
+30
+
+FileTable:
+
+Heap:
+
+
+Id:3
+ExeStack:
+
+SymTable:
+v=3
+
+Out:
+0
+1
+2
+30
+
+FileTable:
+
+Heap:
+
+
