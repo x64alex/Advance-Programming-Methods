@@ -118,7 +118,7 @@ public class Examples {
         IStmt ex12 = new CompStmt(new VarDeclStmt("v", new IntType()), new AssignStmt("v",new ValueExp(new StringValue("ad"))));
 
 
-        //v=20;
+        //v=0;
         //(for(v=0;v<3;v=v+1) fork(print(v);v=v+1) );
         //print(v*10)
         IStmt ex13 = new CompStmt(new  VarDeclStmt("v", new IntType()),new CompStmt(
@@ -134,7 +134,19 @@ public class Examples {
                 )
         );
 
+        //v=0;
+        //(while(v<3) (fork(print(v);v=v+1);v=v+1);
+        //sleep(5);
+        //print(v*10)
+        IStmt ex15 = new CompStmt(new VarDeclStmt("v", new IntType()), new CompStmt(
+                new WhileStmt(new RelExp("<",new VarExp("v"), new ValueExp(new IntValue(3))), new CompStmt(new ForkStmt(new CompStmt(
+                        new PrintStmt(new VarExp("v")), new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                )), new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                        )),
+                new PrintStmt(new ArithExp('*',new VarExp("v"), new ValueExp(new IntValue(10))))
+        ));
 
-        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14};
+
+        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15};
     }
 }
