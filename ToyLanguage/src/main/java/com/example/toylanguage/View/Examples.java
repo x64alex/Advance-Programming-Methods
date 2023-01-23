@@ -167,7 +167,23 @@ public class Examples {
                         ,new PrintStmt(new ValueExp(new IntValue(300))))
         ));
 
+        //v=0;
+        //(repeat (fork(print(v);v=v-1);v=v+1) until v==3);
+        //print(v*10)
+        IStmt ex17 = new CompStmt(new VarDeclStmt("v", new IntType()), new CompStmt(
+                new RepeatUntilStmt(new RelExp("==", new VarExp("v"), new ValueExp(new IntValue(3))),
+                        new CompStmt(new ForkStmt(
+                                new CompStmt(
+                                        new PrintStmt(new VarExp("v")),
+                                        new AssignStmt("v", new ArithExp('-', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                )
+                        ),
+                                new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                )
+                        ),
+                new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))))
+        ));
 
-        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15, ex16};
+        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15, ex16, ex17};
     }
 }
