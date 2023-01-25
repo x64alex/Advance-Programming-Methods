@@ -8,6 +8,7 @@ import com.example.toylanguage.Model.Expressions.LogicExp;
 import com.example.toylanguage.Model.Expressions.NotExp;
 import com.example.toylanguage.Model.Expressions.RelExp;
 import com.example.toylanguage.Model.PrgState;
+import com.example.toylanguage.Model.Types.BoolType;
 import com.example.toylanguage.Model.Types.Type;
 
 public class RepeatUntilStmt implements IStmt{
@@ -41,6 +42,12 @@ public class RepeatUntilStmt implements IStmt{
 
     @Override
     public MyIDictionary<String, Type> typecheck(MyIDictionary<String, Type> typeEnv) throws MyException {
-        return typeEnv;
+        Type typexp=exp.typecheck(typeEnv);
+        if (typexp.equals(new BoolType())) {
+            stmt.typecheck(typeEnv.deepCopy());
+            return typeEnv;
+        }
+        else
+            throw new MyException("The condition of while has not the type bool");
     }
 }

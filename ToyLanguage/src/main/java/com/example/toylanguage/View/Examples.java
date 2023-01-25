@@ -233,6 +233,54 @@ public class Examples {
                 new PrintStmt(new MULExp(new VarExp("v1"), new VarExp("v2")))
                 );
 
-        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15, ex16, ex17, ex18, ex19, ex20};
+        //int v; int x; int y; v=0;
+        //(repeat (fork(print(v);v=v-1);v=v+1) until v==3);
+        //x=1;nop;y=3;nop;
+        //print(v*10)
+        //
+        //The final Out should be {0,1,2,30}
+        IStmt ex21 = new CompStmt(new CompStmt(new CompStmt(new VarDeclStmt("v", new IntType()), new VarDeclStmt("x", new IntType())),
+                new CompStmt(new VarDeclStmt("y", new IntType()), new AssignStmt("v",new ValueExp(new IntValue(0))))),
+                new CompStmt(new RepeatUntilStmt(new RelExp("==", new VarExp("v"), new ValueExp(new IntValue(3))),
+                        new CompStmt(new ForkStmt(
+                                new CompStmt(
+                                        new PrintStmt(new VarExp("v")),
+                                        new AssignStmt("v", new ArithExp('-', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                )
+                        ),
+                                new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                        )
+                ),new CompStmt(
+                        new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(1))), new NopStmt()),
+                        new CompStmt(new CompStmt(new AssignStmt("y", new ValueExp(new IntValue(3))), new NopStmt()),
+                                new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))))
+                                )
+                )
+                )
+
+                );
+
+        IStmt ex22 = new CompStmt(new CompStmt(new CompStmt(new VarDeclStmt("v", new IntType()), new VarDeclStmt("x", new IntType())),
+                new CompStmt(new VarDeclStmt("y", new IntType()), new AssignStmt("v",new ValueExp(new IntValue(0))))),
+                new CompStmt(new RepeatUntilStmt(new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(3))),
+                        new CompStmt(new ForkStmt(
+                                new CompStmt(
+                                        new PrintStmt(new VarExp("v")),
+                                        new AssignStmt("v", new ArithExp('-', new VarExp("v"), new ValueExp(new IntValue(1))))
+                                )
+                        ),
+                                new AssignStmt("v", new ArithExp('+', new VarExp("v"), new ValueExp(new IntValue(1))))
+                        )
+                ),new CompStmt(
+                        new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(1))), new NopStmt()),
+                        new CompStmt(new CompStmt(new AssignStmt("y", new ValueExp(new IntValue(3))), new NopStmt()),
+                                new PrintStmt(new ArithExp('*', new VarExp("v"), new ValueExp(new IntValue(10))))
+                        )
+                )
+                )
+
+        );
+
+        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14,ex15, ex16, ex17, ex18, ex19, ex20,ex21,ex22};
     }
 }
