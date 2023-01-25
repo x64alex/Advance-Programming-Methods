@@ -33,22 +33,18 @@ public class CyclicBarrier<K,V> implements ICyclicBarrier<K,V>
 
 
     @Override
-    public Iterable<K> getAll() {
-        return map.keySet();
+    public Map<K,V> getBarrier() {
+        return map;
     }
 
     @Override
     public String toString()
     {
-        StringBuilder s = new StringBuilder();
-        s.append("\n\nBarrierTable:");
+        String s = "";
         for (Map.Entry<K,V> e : map.entrySet())
         {
-            s.append('\n');
-            s.append(e.getKey());
-            s.append("-->");
-            s.append(e.getValue());
+            s += "\n"+e.getKey()+"-->"+e.getValue();
         }
-        return s.toString();
+        return s;
     }
 }

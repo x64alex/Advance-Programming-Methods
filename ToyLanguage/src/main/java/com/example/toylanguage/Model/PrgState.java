@@ -98,6 +98,7 @@ public class PrgState {
                 "\nOut:\n" + out +
                 "\nFileTable:\n" + FileTable+
                 "\nHeap:\n" + heap+
+                "\nBarrierTable:\n"+ barrier+
                 "\n\n";
     }
 }

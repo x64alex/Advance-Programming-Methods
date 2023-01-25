@@ -1,5 +1,7 @@
 package com.example.toylanguage.Model.ADT.Barrier;
 
+import java.util.Map;
+
 public interface ICyclicBarrier<K, V>
 {
     void add(K key, V value);
@@ -10,5 +12,5 @@ public interface ICyclicBarrier<K, V>
 
     boolean contains(K key);
 
-    Iterable<K> getAll();
+    Map<K,V> getBarrier();
 }

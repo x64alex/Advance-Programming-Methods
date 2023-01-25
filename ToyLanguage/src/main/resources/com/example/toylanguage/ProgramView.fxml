@@ -31,11 +31,10 @@
       <ListView fx:id="exeStackTable" layoutX="892.0" layoutY="94.0" prefHeight="200.0" prefWidth="345.0" />
       <Label layoutX="761.0" layoutY="65.0" text="Symbol Table" />
       <Label layoutX="426.0" layoutY="330.0" text="Barrier Table" />
-      <TableView layoutX="377.0" layoutY="373.0" prefHeight="200.0" prefWidth="226.0">
+      <TableView fx:id="barrierTableView" layoutX="377.0" layoutY="373.0" prefHeight="200.0" prefWidth="226.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Index" />
-          <TableColumn prefWidth="75.0" text="Value" />
-            <TableColumn prefWidth="75.0" text="List" />
+          <TableColumn fx:id="barrierTableIndex" prefWidth="75.0" text="Index" />
+          <TableColumn fx:id="barrierTableValue" prefWidth="75.0" text="Value" />
         </columns>
       </TableView>
    </children>

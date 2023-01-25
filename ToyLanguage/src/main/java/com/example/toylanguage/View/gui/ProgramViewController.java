@@ -2,10 +2,13 @@ package com.example.toylanguage.View.gui;
 
 import com.example.toylanguage.Controller.*;
 import com.example.toylanguage.Exceptions.MyException;
+import com.example.toylanguage.Model.ADT.Barrier.ICyclicBarrier;
 import com.example.toylanguage.Model.ADT.Heap.MyIHeap;
 import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
+import com.example.toylanguage.Model.PairBarrier.PairBarrier;
 import com.example.toylanguage.Model.PrgState;
 import com.example.toylanguage.Model.Statments.IStmt;
+import com.example.toylanguage.Model.Values.IntValue;
 import com.example.toylanguage.Model.Values.Value;
 import com.example.toylanguage.View.Examples;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -56,10 +59,20 @@ public class ProgramViewController {
     public TableColumn<Pair<Integer, Value>, String> heapTableValue;
     @FXML
     private TableView<Pair<String, Value>> symTableView;
+
     @FXML
     public TableColumn<Pair<String, Value>, String> symTableName;
     @FXML
     public TableColumn<Pair<String, Value>, String> symTableValue;
+
+    @FXML
+    private TableView<Pair<String, Pair<String, String>>> barrierTableView;
+
+    @FXML
+    public TableColumn<Pair<String, Pair<String, String>>, String> barrierTableIndex;
+    @FXML
+    public TableColumn<Pair<String, Pair<String, String>>, String> barrierTableValue;
+
     @FXML
     private ListView<Value> output;
     @FXML
@@ -78,6 +91,8 @@ public class ProgramViewController {
         heapTableValue.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
         symTableName.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first.toString()));
         symTableValue.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
+        barrierTableIndex.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().first.toString()));
+        barrierTableValue.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().second.first.toString()));
 
         runOneStep.setOnAction(actionEvent -> {
             if(ctr == null){
@@ -119,6 +134,7 @@ public class ProgramViewController {
         populateProgramStates();
         populateExeStackTable();
         populateSymTable();
+        populateVarrierTableView();
     }
 
 
@@ -165,5 +181,22 @@ public class ProgramViewController {
         symTableView.setItems(FXCollections.observableList(symTableList));
         symTableView.refresh();
 
+    }
+
+    private void populateVarrierTableView() {
+        PrgState prgState = ctr.getPrgState(selectedPrgState);
+        ICyclicBarrier<IntValue, PairBarrier<IntValue, List<Integer>>> barrier = prgState.getBarrier();
+        Map<IntValue, PairBarrier<IntValue, List<Integer>>> map = barrier.getBarrier();
+        List<Pair<String, Value>> symTableList = new ArrayList<>();
+        List<Pair<String, Pair<String, String>>> list = new ArrayList<>();
+        map.forEach((k,v)-> {
+            symTableList.add(new Pair(k,v.getFirst()));
+                }
+
+        );
+        //for (Map.Entry<IntValue, PairBarrier<IntValue, List<Integer>>> entry : map)
+        barrierTableView.setItems(FXCollections.observableList(list));
+        barrierTableView.refresh();
+        //  /<TableColumn fx:id="barrierTableList"prefWidth="75.0" text="List" />
     }
 }

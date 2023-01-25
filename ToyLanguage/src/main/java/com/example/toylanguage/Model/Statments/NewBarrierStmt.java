@@ -39,7 +39,7 @@ public class NewBarrierStmt implements IStmt
 
         Type integer = new IntType();
         if(integer.equals(expression.getType())){
-            Value nr = (IntValue) integer;
+            IntValue nr = (IntValue) expression;
             barrierTable.add(nextFreeInt, new PairBarrier(nr, new ArrayList<Integer>()));
 
             if(symTbl.isDefined(variable)){
