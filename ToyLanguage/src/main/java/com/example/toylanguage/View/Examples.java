@@ -159,10 +159,44 @@ public class Examples {
                         ),
                         new CompStmt(new AwaitStmt("cnt"), new PrintStmt(new RhExp(new VarExp("v3"))))
                 )
-                //new PrintStmt(new VarExp("v1"))
-
                 )
                 );
-        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13};
+
+        IStmt ex14 = new CompStmt(new CompStmt(
+                new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())), new VarDeclStmt("v2", new RefType(new IntType()))),
+                new CompStmt(new VarDeclStmt("v3", new RefType(new IntType())), new VarDeclStmt("cnt", new IntType()))
+        ),
+                new CompStmt(new CompStmt(
+                        new CompStmt(new NewStmt("v1", new ValueExp(new IntValue(2))), new NewStmt("v2", new ValueExp(new IntValue(3)))),
+                        new CompStmt(new NewStmt("v3", new ValueExp(new IntValue(4))), new NewBarrierStmt("cnt", new RhExp(new ValueExp(new BoolValue(false)))))
+                ), new CompStmt(
+                        new CompStmt(
+                                new ForkStmt(
+                                        new CompStmt(new CompStmt(
+                                                new AwaitStmt("cnt"),
+                                                new WhStmt("v1", new ArithExp('*', new RhExp(new VarExp("v1")), new ValueExp(new IntValue(10))))
+                                        ),
+                                                new PrintStmt(new RhExp(new VarExp("v1")))
+                                        )
+                                ),
+                                new ForkStmt(
+                                        new CompStmt(new CompStmt(
+                                                new AwaitStmt("cnt"),
+                                                new WhStmt("v2", new ArithExp('*', new RhExp(new VarExp("v2")), new ValueExp(new IntValue(10))))
+                                        ),new CompStmt(
+                                                new WhStmt("v2", new ArithExp('*', new RhExp(new VarExp("v2")), new ValueExp(new IntValue(10)))),
+                                                new PrintStmt(new RhExp(new VarExp("v2")))
+
+                                        )
+
+                                        )
+                                )
+                        ),
+                        new CompStmt(new AwaitStmt("cnt"), new PrintStmt(new RhExp(new VarExp("v3"))))
+                )
+                )
+        );
+
+        return new IStmt[]{ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9, ex10, ex11, ex12, ex13, ex14};
     }
 }

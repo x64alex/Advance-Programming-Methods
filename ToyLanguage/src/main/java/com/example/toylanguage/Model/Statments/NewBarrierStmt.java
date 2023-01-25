@@ -6,6 +6,7 @@ import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.Expressions.Exp;
 import com.example.toylanguage.Model.PairBarrier.PairBarrier;
 import com.example.toylanguage.Model.PrgState;
+import com.example.toylanguage.Model.Types.BoolType;
 import com.example.toylanguage.Model.Types.IntType;
 import com.example.toylanguage.Model.Types.Type;
 import com.example.toylanguage.Model.Values.IntValue;
@@ -64,6 +65,11 @@ public class NewBarrierStmt implements IStmt
 
     @Override
     public MyIDictionary<String, Type> typecheck(MyIDictionary<String, Type> typeEnv) throws MyException {
-        return typeEnv;
+        Type typexp=exp.typecheck(typeEnv);
+        if (typexp.equals(new IntType())) {
+            return typeEnv;
+        }
+        else
+            throw new MyException("The condition of while has not the type int");
     }
 }
