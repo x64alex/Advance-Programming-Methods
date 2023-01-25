@@ -75,7 +75,7 @@ public class AwaitStmt implements IStmt
 
     @Override
     public IStmt deepCopy() {
-        return null;
+        return new AwaitStmt(variable);
     }
 
     @Override
