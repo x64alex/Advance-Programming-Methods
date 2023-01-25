@@ -3,6 +3,8 @@ package com.example.toylanguage.View.gui;
 
 import com.example.toylanguage.Controller.Controller;
 import com.example.toylanguage.Exceptions.MyException;
+import com.example.toylanguage.Model.ADT.Barrier.CyclicBarrier;
+import com.example.toylanguage.Model.ADT.Barrier.ICyclicBarrier;
 import com.example.toylanguage.Model.ADT.SymTable.MyDictionary;
 import com.example.toylanguage.Model.ADT.SymTable.MyIDictionary;
 import com.example.toylanguage.Model.ADT.FileTable.MyFileTable;
@@ -10,6 +12,7 @@ import com.example.toylanguage.Model.ADT.List.MyIList;
 import com.example.toylanguage.Model.ADT.List.MyList;
 import com.example.toylanguage.Model.ADT.Stack.MyIStack;
 import com.example.toylanguage.Model.ADT.Stack.MyStack;
+import com.example.toylanguage.Model.PairBarrier.PairBarrier;
 import com.example.toylanguage.Model.PrgState;
 import com.example.toylanguage.Model.Statments.IStmt;
 import com.example.toylanguage.Model.Values.StringValue;
@@ -23,6 +26,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 
 import java.io.BufferedReader;
+import java.util.List;
 
 public class ListViewController {
 
@@ -54,7 +58,8 @@ public class ListViewController {
 			 MyIDictionary<String, Value> sTable = new MyDictionary<>();
 			 MyIList<Value> ot = new MyList<>();
 			 MyFileTable<StringValue, BufferedReader> ft = new MyFileTable<>();
-			 PrgState prg = new PrgState(stk,sTable,ot,ft,stmt);
+			 ICyclicBarrier<Integer, PairBarrier<Integer, List<Integer>>> barrier = new CyclicBarrier<>();
+			 PrgState prg = new PrgState(stk,sTable,ot,ft,barrier,stmt);
 			 MyIRepository repo = new MyRepository(prg, "log"+index+".txt");
 			 Controller ctr = new Controller(repo);
 			 try{
