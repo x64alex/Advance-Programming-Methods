@@ -15,6 +15,11 @@ public class NopStmt implements IStmt{
         return null;
     }
 
+
+    public String toString() {
+        return "(Nop)";
+    }
+
     @Override
     public IStmt deepCopy() {
         return new NopStmt();
