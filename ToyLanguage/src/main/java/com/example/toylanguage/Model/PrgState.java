@@ -17,6 +17,7 @@ import com.example.toylanguage.Model.ADT.Stack.MyStack;
 import com.example.toylanguage.Model.PairBarrier.PairBarrier;
 import com.example.toylanguage.Model.Statments.IStmt;
 import com.example.toylanguage.Model.Types.IntType;
+import com.example.toylanguage.Model.Values.IntValue;
 import com.example.toylanguage.Model.Values.StringValue;
 import com.example.toylanguage.Model.Values.Value;
 import javafx.util.Pair;
@@ -32,7 +33,7 @@ public class PrgState {
     MyIStack<IStmt> exeStack;
 
 
-    ICyclicBarrier<Integer, PairBarrier<IntType, List<Integer>>> barrier;
+    ICyclicBarrier<IntValue, PairBarrier<IntValue, List<Integer>>> barrier;
     MyIDictionary<String, Value> symTable;
     MyIList<Value> out;
 
@@ -44,7 +45,7 @@ public class PrgState {
                     MyIDictionary<String,Value> sTable,
                     MyIList<Value> ot,
                     MyIFileTable<StringValue, BufferedReader> ft,
-                    ICyclicBarrier<Integer, PairBarrier<IntType, List<Integer>>> b,
+                    ICyclicBarrier<IntValue, PairBarrier<IntValue, List<Integer>>> b,
                     IStmt prg){
         exeStack=stk;
         symTable=sTable;
@@ -83,7 +84,7 @@ public class PrgState {
 
     synchronized public MyIHeap<Integer, Value> getHeap() {return this.heap; }
 
-    public ICyclicBarrier<Integer, PairBarrier<IntType, List<Integer>>> getBarrier(){return this.barrier;};
+    public ICyclicBarrier<IntValue, PairBarrier<IntValue, List<Integer>>> getBarrier(){return this.barrier;};
 
     public void setHeap(MyIHeap<Integer, Value> newHeap) {this.heap = newHeap;}
 

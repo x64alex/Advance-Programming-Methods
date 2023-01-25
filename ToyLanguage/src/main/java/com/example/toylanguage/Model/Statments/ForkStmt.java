@@ -11,6 +11,7 @@ import com.example.toylanguage.Model.ADT.Stack.MyIStack;
 import com.example.toylanguage.Model.ADT.Stack.MyStack;
 import com.example.toylanguage.Model.PairBarrier.PairBarrier;
 import com.example.toylanguage.Model.PrgState;
+import com.example.toylanguage.Model.Values.IntValue;
 import com.example.toylanguage.Model.Values.StringValue;
 import com.example.toylanguage.Model.Values.Value;
 import com.example.toylanguage.Model.Types.*;
@@ -35,7 +36,7 @@ public class ForkStmt implements IStmt{
         MyIDictionary<String, Value> sTable = state.getSymTable().deepCopy();
         MyIList<Value> ot = state.getIList();
         MyIFileTable<StringValue, BufferedReader> fileTable= state.getFileTable();
-        ICyclicBarrier<Integer, PairBarrier<IntType, List<Integer>>> barrier = state.getBarrier();
+        ICyclicBarrier<IntValue, PairBarrier<IntValue, List<Integer>>> barrier = state.getBarrier();
 
         PrgState newPrgState = new PrgState(stk, sTable,ot,fileTable,barrier, forkstmt);
         newPrgState.setHeap(state.getHeap());

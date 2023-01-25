@@ -31,15 +31,15 @@ public class NewBarrierStmt implements IStmt
     public PrgState execute(PrgState state) throws MyException
     {
         MyIDictionary<String, Value> symTbl = state.getSymTable();
-        Value nextFreeInt = new IntValue(nextFree);
+        IntValue nextFreeInt = new IntValue(nextFree);
 
         Value expression = this.exp.eval(symTbl, state.getHeap());
-        ICyclicBarrier<Integer, PairBarrier<IntType, List<Integer>>> barrierTable = state.getBarrier();
+        ICyclicBarrier<IntValue, PairBarrier<IntValue, List<Integer>>> barrierTable = state.getBarrier();
 
         Type integer = new IntType();
         if(integer.equals(expression.getType())){
             Value nr = (IntValue) integer;
-            barrierTable.add(nextFree, new PairBarrier(nr, new ArrayList<Integer>()));
+            barrierTable.add(nextFreeInt, new PairBarrier(nr, new ArrayList<Integer>()));
 
             if(symTbl.isDefined(variable)){
                 symTbl.update(variable, nextFreeInt);
