@@ -72,6 +72,7 @@ public class ProgramViewController {
     public TableColumn<Pair<String, Pair<String, String>>, String> barrierTableIndex;
     @FXML
     public TableColumn<Pair<String, Pair<String, String>>, String> barrierTableValue;
+   // public TableColumn<Pair<String, Pair<String, String>>, String> barrierTableList;
 
     @FXML
     private ListView<Value> output;
@@ -91,8 +92,9 @@ public class ProgramViewController {
         heapTableValue.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
         symTableName.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first.toString()));
         symTableValue.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
-        barrierTableIndex.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().first.toString()));
-        barrierTableValue.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().second.first.toString()));
+        barrierTableIndex.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().first));
+        barrierTableValue.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().second.first));
+       // barrierTableList.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().second.second));
 
         runOneStep.setOnAction(actionEvent -> {
             if(ctr == null){
@@ -187,10 +189,10 @@ public class ProgramViewController {
         PrgState prgState = ctr.getPrgState(selectedPrgState);
         ICyclicBarrier<IntValue, PairBarrier<IntValue, List<Integer>>> barrier = prgState.getBarrier();
         Map<IntValue, PairBarrier<IntValue, List<Integer>>> map = barrier.getBarrier();
-        List<Pair<String, Value>> symTableList = new ArrayList<>();
+        //List<Pair<String, Value>> symTableList = new ArrayList<>();
         List<Pair<String, Pair<String, String>>> list = new ArrayList<>();
         map.forEach((k,v)-> {
-            symTableList.add(new Pair(k,v.getFirst()));
+            list.add(new Pair(k.toString(),new Pair(v.getFirst().toString(), v.getSecond().toString())));
                 }
 
         );
