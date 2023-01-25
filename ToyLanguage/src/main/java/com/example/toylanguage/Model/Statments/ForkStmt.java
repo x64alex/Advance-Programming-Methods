@@ -35,7 +35,7 @@ public class ForkStmt implements IStmt{
         MyIDictionary<String, Value> sTable = state.getSymTable().deepCopy();
         MyIList<Value> ot = state.getIList();
         MyIFileTable<StringValue, BufferedReader> fileTable= state.getFileTable();
-        ICyclicBarrier<Integer, PairBarrier<Integer, List<Integer>>> barrier = state.getBarrier();
+        ICyclicBarrier<Integer, PairBarrier<IntType, List<Integer>>> barrier = state.getBarrier();
 
         PrgState newPrgState = new PrgState(stk, sTable,ot,fileTable,barrier, forkstmt);
         newPrgState.setHeap(state.getHeap());

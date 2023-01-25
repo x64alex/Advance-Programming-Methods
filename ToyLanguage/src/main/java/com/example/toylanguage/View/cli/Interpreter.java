@@ -13,6 +13,7 @@ import com.example.toylanguage.Model.ADT.Stack.MyStack;
 import com.example.toylanguage.Model.PairBarrier.PairBarrier;
 import com.example.toylanguage.Model.PrgState;
 import com.example.toylanguage.Model.Statments.IStmt;
+import com.example.toylanguage.Model.Types.IntType;
 import com.example.toylanguage.Model.Values.StringValue;
 import com.example.toylanguage.Model.Values.Value;
 import com.example.toylanguage.Repository.MyIRepository;
@@ -36,7 +37,7 @@ class Interpreter {
             MyIDictionary<String, Value> sTable = new MyDictionary<>();
             MyIList<Value> ot = new MyList<>();
             MyFileTable<StringValue, BufferedReader> ft = new MyFileTable<>();
-            ICyclicBarrier<Integer, PairBarrier<Integer, List<Integer>>> barrier = new CyclicBarrier<>();
+            ICyclicBarrier<Integer, PairBarrier<IntType, List<Integer>>> barrier = new CyclicBarrier<>();
             PrgState prg = new PrgState(stk,sTable,ot,ft,barrier,stmt);
             MyIRepository repo = new MyRepository(prg, "log"+Integer.toString(pos)+".txt");
             Controller ctr = new Controller(repo);
