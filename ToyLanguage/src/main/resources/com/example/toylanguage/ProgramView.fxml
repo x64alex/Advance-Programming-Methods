@@ -35,6 +35,8 @@
         <columns>
           <TableColumn fx:id="barrierTableIndex" prefWidth="75.0" text="Index" />
           <TableColumn fx:id="barrierTableValue" prefWidth="75.0" text="Value" />
+            <TableColumn fx:id="barrierTableList" prefWidth="75.0" text="List" />
+
         </columns>
       </TableView>
    </children>

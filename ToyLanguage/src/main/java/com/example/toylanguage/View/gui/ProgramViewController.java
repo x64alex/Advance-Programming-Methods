@@ -72,7 +72,7 @@ public class ProgramViewController {
     public TableColumn<Pair<String, Pair<String, String>>, String> barrierTableIndex;
     @FXML
     public TableColumn<Pair<String, Pair<String, String>>, String> barrierTableValue;
-   // public TableColumn<Pair<String, Pair<String, String>>, String> barrierTableList;
+    public TableColumn<Pair<String, Pair<String, String>>, String> barrierTableList;
 
     @FXML
     private ListView<Value> output;
@@ -94,7 +94,7 @@ public class ProgramViewController {
         symTableValue.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
         barrierTableIndex.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().first));
         barrierTableValue.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().second.first));
-       // barrierTableList.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().second.second));
+       barrierTableList.setCellValueFactory(p-> new SimpleStringProperty(p.getValue().second.second));
 
         runOneStep.setOnAction(actionEvent -> {
             if(ctr == null){
